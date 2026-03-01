@@ -214,6 +214,32 @@
         .footer span {
             color: #EF4444; /* Heart Color */
         }
+                .action-button {
+            /* Creates a smooth blue gradient */
+            background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 16px 24px;
+            border-radius: 12px; /* Softer, rounder edges */
+            font-weight: 600;
+            font-size: 1.1em;
+            width: 80%;
+            text-align: center;
+            /* Adds a soft glowing shadow around the button */
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+            /* Tells the browser to animate changes smoothly */
+            transition: all 0.3s ease; 
+        }
+
+        .action-button:hover {
+            /* Makes the button physically lift up when hovered over */
+            transform: translateY(-4px);
+            /* Makes the shadow bigger to complete the 3D effect */
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.5);
+            /* Reverses the gradient slightly for a nice visual pop */
+            background: linear-gradient(135deg, #3B82F6 0%, #1E3A8A 100%);
+        }
+
 
     </style>
 </head>
