@@ -6,17 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gurukul Kangri (GKDU) Fresher's Guide</title>
     <meta name="description" content="The ultimate unofficial survival and resource guide for Gurukul Kangri (GKDU) freshers. Find WhatsApp groups, hostel tips, and FET previous year papers.">
-    <meta name="keywords" content="Gurukul Kangri, GKDU, Haridwar, GKV freshers guide, GKDU admission, GKV hostel, FET previous year papers, B.Tech Haridwar">
+    <meta name="keywords" content="Gurukul Kangri, GKDU, Haridwar, GKV freshers guide, GKDU admission, GKV hostel, FET previous year papers, B.Tech Haridwar, GKV results, GKV fee receipt">
 
     <style>
         /* Modern, edgy tech font */
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap');
 
+        /* CSS Variables for Seamless Dark/Light Theming */
         :root {
+            /* Light Theme (Default) */
             --bg-color: #f4f4f0;
+            --bg-dots: #000000;
             --container-bg: #ffffff;
             --text-main: #000000;
+            --text-muted: #333333;
             --border-color: #000000;
+            --card-bg: #ffffff;
             
             /* Vibrant Neobrutalism Palette */
             --color-yellow: #FFDE00;
@@ -24,13 +29,24 @@
             --color-pink: #FF90E8;
             --color-blue: #90E0EF;
             --color-purple: #CDB4DB;
+            --btn-text: #000000;
+        }
+
+        /* Dark Theme Variables */
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --bg-dots: #444444;
+            --container-bg: #1a1a1a;
+            --text-main: #ffffff;
+            --text-muted: #dddddd;
+            --border-color: #ffffff;
+            --card-bg: #222222;
         }
 
         body {
             font-family: 'Space Grotesk', sans-serif;
-            /* Cool dot grid background */
             background-color: var(--bg-color);
-            background-image: radial-gradient(#000000 1px, transparent 1px);
+            background-image: radial-gradient(var(--bg-dots) 1px, transparent 1px);
             background-size: 20px 20px;
             color: var(--text-main);
             margin: 0;
@@ -38,6 +54,8 @@
             display: flex;
             justify-content: center;
             line-height: 1.6;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            overflow-x: hidden;
         }
 
         .container {
@@ -49,12 +67,46 @@
             /* Signature Neobrutalism hard shadow and thick border */
             border: 4px solid var(--border-color);
             box-shadow: 12px 12px 0px var(--border-color);
-            animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            position: relative;
+            transition: all 0.3s ease;
         }
 
-        @keyframes popIn {
-            0% { transform: scale(0.95); opacity: 0; }
-            100% { transform: scale(1); opacity: 1; }
+        /* --- Scroll Reveal Animations --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- Theme Toggle Button --- */
+        .theme-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--container-bg);
+            border: 3px solid var(--border-color);
+            color: var(--text-main);
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 0.95em;
+            cursor: pointer;
+            box-shadow: 4px 4px 0px var(--border-color);
+            transition: all 0.1s ease;
+            z-index: 10;
+        }
+
+        .theme-toggle:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px var(--border-color);
+            background: var(--color-yellow);
+            color: #000;
         }
 
         .header {
@@ -63,9 +115,11 @@
             border-bottom: 4px solid var(--border-color);
             padding-bottom: 25px;
             background: var(--color-yellow);
+            color: #000; /* Always black text on yellow */
             margin: -40px -40px 40px -40px;
-            padding: 40px 20px 30px 20px;
+            padding: 60px 20px 30px 20px;
             border-radius: 8px 8px 0 0;
+            transition: all 0.3s ease;
         }
 
         .header h1 {
@@ -92,10 +146,12 @@
             margin-bottom: 20px;
             display: inline-block;
             background: var(--color-blue);
+            color: #000;
             padding: 5px 15px;
             border: 3px solid var(--border-color);
             box-shadow: 4px 4px 0px var(--border-color);
             transform: rotate(-1deg);
+            transition: all 0.3s ease;
         }
 
         .grid-2 {
@@ -105,7 +161,7 @@
         }
 
         .card {
-            background: #fff;
+            background: var(--card-bg);
             padding: 25px;
             border-radius: 8px;
             border: 3px solid var(--border-color);
@@ -136,7 +192,7 @@
         .btn {
             display: inline-block;
             background: var(--color-pink);
-            color: var(--text-main) !important;
+            color: var(--btn-text) !important;
             padding: 12px 20px;
             text-decoration: none;
             border-radius: 6px;
@@ -150,15 +206,12 @@
             text-transform: uppercase;
         }
 
-        /* Press-down effect on hover */
         .btn:hover {
             transform: translate(4px, 4px);
             box-shadow: 0px 0px 0px var(--border-color);
         }
 
-        .btn-secondary {
-            background: var(--color-green);
-        }
+        .btn-secondary { background: var(--color-green); }
 
         .link-list {
             list-style: none;
@@ -166,9 +219,7 @@
             margin: 0;
         }
 
-        .link-list li {
-            margin-bottom: 12px;
-        }
+        .link-list li { margin-bottom: 12px; }
 
         .link-list a {
             text-decoration: none;
@@ -183,41 +234,64 @@
         
         .link-list a:hover {
             background: var(--color-yellow);
+            color: #000;
             border: 2px solid var(--border-color);
             transform: translateX(5px);
         }
 
-        .link-list a span {
-            font-size: 0.9em;
-            font-weight: 700;
-        }
+        .link-list a span { font-size: 0.9em; font-weight: 700; }
 
         .tip-box {
-            background: #E0E7FF;
+            background: var(--card-bg);
             border: 3px solid var(--border-color);
             border-left-width: 8px;
             padding: 20px;
             margin-top: 25px;
             font-size: 1em;
             font-weight: 700;
+            transition: all 0.3s ease;
         }
 
         .tip-box strong {
             background: var(--color-yellow);
+            color: #000;
             padding: 2px 5px;
-            border: 2px solid #000;
+            border: 2px solid var(--border-color);
             margin-right: 5px;
         }
 
-        /* --- FAQ Section Styling --- */
-        .faq-container {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
+        /* --- Advanced FAQ Section with Live Search --- */
+        .faq-search-box {
+            width: 100%;
+            padding: 14px 15px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1em;
+            font-weight: 700;
+            border: 3px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 25px;
+            background: var(--card-bg);
+            color: var(--text-main);
+            box-sizing: border-box;
+            box-shadow: 4px 4px 0px var(--border-color);
+            transition: all 0.2s ease;
         }
         
+        .faq-search-box:focus {
+            outline: none;
+            background: var(--color-yellow);
+            color: #000;
+        }
+        
+        .faq-search-box::placeholder {
+            color: var(--text-muted);
+            opacity: 0.7;
+        }
+
+        .faq-container { display: flex; flex-direction: column; gap: 15px; }
+        
         details {
-            background: #fff;
+            background: var(--card-bg);
             border: 3px solid var(--border-color);
             border-radius: 8px;
             box-shadow: 4px 4px 0px var(--border-color);
@@ -227,6 +301,7 @@
         
         details[open] {
             background: var(--color-yellow);
+            color: #000;
         }
         
         summary {
@@ -240,18 +315,9 @@
             align-items: center;
         }
         
-        /* Custom Plus/Minus icons for Neobrutalism */
-        summary::-webkit-details-marker {
-            display: none;
-        }
-        summary::after {
-            content: '+';
-            font-size: 1.5em;
-            line-height: 1;
-        }
-        details[open] summary::after {
-            content: '-';
-        }
+        summary::-webkit-details-marker { display: none; }
+        summary::after { content: '+'; font-size: 1.5em; line-height: 1; }
+        details[open] summary::after { content: '-'; }
         
         .faq-content {
             padding: 0 15px 15px 15px;
@@ -260,11 +326,13 @@
             border-top: 3px dashed var(--border-color);
             margin-top: 10px;
             padding-top: 15px;
-            background: #fff; /* Keeps text readable when opened */
+            background: var(--card-bg); /* Reset bg for readability */
+            color: var(--text-main);
         }
 
         .review-section {
             background: var(--color-purple);
+            color: #000;
             padding: 40px 30px;
             border-radius: 12px;
             text-align: center;
@@ -272,24 +340,16 @@
             box-shadow: 8px 8px 0px var(--border-color);
             margin-top: 50px;
             transform: rotate(1deg);
+            transition: all 0.3s ease;
         }
 
-        .review-section h2 {
-            margin-top: 0;
-            font-size: 2em;
-            text-transform: uppercase;
-        }
-
-        .review-section p {
-            font-weight: 700;
-            font-size: 1.1em;
-            margin-bottom: 25px;
-        }
+        .review-section h2 { margin-top: 0; font-size: 2em; text-transform: uppercase; }
+        .review-section p { font-weight: 700; font-size: 1.1em; margin-bottom: 25px; }
 
         .action-button {
             display: inline-block;
             background: var(--color-yellow);
-            color: var(--text-main) !important;
+            color: #000 !important;
             text-decoration: none;
             padding: 16px 32px;
             border-radius: 6px; 
@@ -312,27 +372,33 @@
             text-align: center;
             margin-top: 40px;
             font-weight: 700;
-            font-size: 1em;
+            font-size: 1.1em;
             border-top: 3px dashed var(--border-color);
-            padding-top: 20px;
+            padding-top: 25px;
         }
 
+        /* Fixed Beating Heart Animation */
         .footer span {
             display: inline-block;
-            animation: spin 3s linear infinite;
+            color: #FF2A2A; 
+            animation: heartbeat 1.2s infinite;
+            font-size: 1.2em;
         }
 
-        @keyframes spin {
-            100% { transform: rotate(360deg); }
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            15% { transform: scale(1.3); }
+            30% { transform: scale(1); }
+            45% { transform: scale(1.3); }
         }
 
-        /* --- Floating Share Button Styling --- */
+        /* --- Floating Share Button --- */
         .floating-share {
             position: fixed;
             bottom: 30px;
             right: 30px;
             background: var(--color-blue);
-            color: var(--text-main);
+            color: #000;
             border: 4px solid var(--border-color);
             box-shadow: 6px 6px 0px var(--border-color);
             border-radius: 50px;
@@ -356,40 +422,56 @@
         @media (max-width: 600px) {
             body { padding: 20px 10px; background-size: 15px 15px;}
             .container { padding: 25px 20px; border-width: 3px; box-shadow: 8px 8px 0px var(--border-color);}
-            .header { margin: -25px -20px 30px -20px; padding: 30px 15px 20px 15px; }
+            .header { margin: -25px -20px 30px -20px; padding: 70px 15px 20px 15px; }
             .header h1 { font-size: 2.2em; }
             .section-title { font-size: 1.3em; }
             .action-button { width: 100%; box-sizing: border-box; }
             .floating-share { bottom: 20px; right: 20px; padding: 12px 20px; font-size: 1em; }
+            .theme-toggle { top: 15px; right: 15px; font-size: 0.85em; padding: 6px 12px;}
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
+    <!-- Container starts with reveal class for load-in animation -->
+    <div class="container reveal active">
+        
+        <!-- Theme Toggle -->
+        <button class="theme-toggle" id="themeBtn" onclick="toggleTheme()">🌙 Dark</button>
+
         <div class="header">
             <h1>Gurukul Kangri</h1>
             <p>The Unofficial Fresher's Guide 🚀</p>
         </div>
 
-        <div class="section">
-            <h2 class="section-title">🏛️ College Portals</h2>
-            <div class="card">
-                <div class="btn-group">
-                    <a href="https://share.google/vnUCMSDR4Nt3ovtIa" class="btn">Main Website ↗</a>
-                    <a href="https://share.google/mQrSIhndp8oXtUgdC" class="btn btn-secondary">Alternate Portal ↗</a>
+        <div class="section reveal">
+            <h2 class="section-title">🏛️ College Portals & Services</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>General Portals</h3>
+                    <div class="btn-group" style="flex-direction: column;">
+                        <a href="https://share.google/vnUCMSDR4Nt3ovtIa" class="btn" target="_blank">Main Website ↗</a>
+                        <a href="https://share.google/mQrSIhndp8oXtUgdC" class="btn btn-secondary" target="_blank">Alternate Portal ↗</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>Student Services</h3>
+                    <div class="btn-group" style="flex-direction: column;">
+                        <a href="https://share.google/f4ZzQM094yr221HPa" class="btn" style="background: var(--color-purple);" target="_blank">Download Fee Receipt ↗</a>
+                        <a href="https://share.google/dKpY3ByxepoVHzmUV" class="btn" style="background: var(--color-yellow);" target="_blank">Check Results ↗</a>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="section">
+        <div class="section reveal">
             <h2 class="section-title">📱 Campus Community</h2>
             <div class="grid-2">
                 <div class="card">
                     <h3>Chat Groups</h3>
                     <div class="btn-group" style="flex-direction: column;">
-                        <a href="https://ig.me/j/AbYV1fHlJ03KWBBm/" class="btn">👨🏽 Boys Discussion</a>
-                        <a href="https://ig.me/j/AbYq82f0ZOMoNNI3/" class="btn" style="background: var(--color-blue);">👩🏽 Girls Discussion</a>
+                        <a href="https://ig.me/j/AbYV1fHlJ03KWBBm/" class="btn" target="_blank">👨🏽 Boys Discussion</a>
+                        <a href="https://ig.me/j/AbYq82f0ZOMoNNI3/" class="btn" style="background: var(--color-blue);" target="_blank">👩🏽 Girls Discussion</a>
                     </div>
                 </div>
                 <div class="card">
@@ -404,12 +486,12 @@
             </div>
         </div>
 
-        <div class="section">
+        <div class="section reveal">
             <h2 class="section-title">📚 Academic Resources</h2>
             <div class="card">
                 <div class="btn-group" style="flex-direction: column;">
-                    <a href="https://drive.google.com/drive/mobile/folders/1nVBWVYDDvre_38XRq506y6ii7-zo_XT6?fbclid=PAT01DUATq69FwZG9mAmV4dG4DYWVtAjEwAHNydGMGYXBwX2lkDzU2NzA2NzM0MzM1MjQyNwABp4gyXM6uuy0MKePYEZRO-ErmfkhkNwGhJSHX6svjKgQfqNAwKKPBEt9qq8gv_aem_P1S3L95_kZj3q1tY1_MxcQ" class="btn" style="background: var(--color-yellow);">Download All Papers</a>
-                    <a href="https://share.google/G90iNCkTZpMHpG3pT" class="btn btn-secondary">FET Previous Papers</a>
+                    <a href="https://drive.google.com/drive/mobile/folders/1nVBWVYDDvre_38XRq506y6ii7-zo_XT6?fbclid=PAT01DUATq69FwZG9mAmV4dG4DYWVtAjEwAHNydGMGYXBwX2lkDzU2NzA2NzM0MzM1MjQyNwABp4gyXM6uuy0MKePYEZRO-ErmfkhkNwGhJSHX6svjKgQfqNAwKKPBEt9qq8gv_aem_P1S3L95_kZj3q1tY1_MxcQ" class="btn" style="background: var(--color-yellow);" target="_blank">Download All Papers</a>
+                    <a href="https://share.google/G90iNCkTZpMHpG3pT" class="btn btn-secondary" target="_blank">FET Previous Papers</a>
                 </div>
                 <div class="tip-box">
                     <strong>💡 PRO TIP:</strong> The first semester sets your trajectory. Securing a high SGPA early on provides a massive advantage. Focus heavily on mastering core subjects!
@@ -417,7 +499,7 @@
             </div>
         </div>
 
-        <div class="section">
+        <div class="section reveal">
             <h2 class="section-title">🏢 Campus & Hostel</h2>
             <div class="card">
                 <div class="btn-group">
@@ -430,54 +512,57 @@
             </div>
         </div>
 
-        <!-- NEW FAQ SECTION -->
-        <div class="section">
+        <div class="section reveal">
             <h2 class="section-title">💬 Fresher FAQs</h2>
-            <div class="faq-container">
+            
+            <!-- Live Search Input -->
+            <input type="text" id="faqSearch" class="faq-search-box" placeholder="🔍 Search FAQs (e.g. laptop, hostel, dress)..." onkeyup="filterFAQs()">
+
+            <div class="faq-container" id="faqContainer">
                 
-                <details>
+                <details class="faq-item">
                     <summary>Are laptops mandatory for 1st-year?</summary>
                     <div class="faq-content">
                         While not strictly mandatory for day one, you'll need one for coding assignments and projects by the middle of the first semester. A decent mid-range laptop is enough!
                     </div>
                 </details>
                 
-                <details>
+                <details class="faq-item">
                     <summary>Is a hostel room guaranteed for freshers?</summary>
                     <div class="faq-content">
                         Not automatically. Hostel seats are limited and allotted strictly on a <strong>first-come, first-served</strong> basis. Generally, 1st-year students and a few 2nd-year students get accommodation. Apply as early as possible!
                     </div>
                 </details>
 
-                <details>
+                <details class="faq-item">
                     <summary>Honest review: How are the hostel facilities?</summary>
                     <div class="faq-content">
                         To be completely transparent, it's a basic survival experience. Students occasionally face issues with water supply, sanitation, and average mess food. We highly recommend being self-reliant and keeping dry snacks handy!
                     </div>
                 </details>
 
-                <details>
+                <details class="faq-item">
                     <summary>How are the classrooms and practical labs?</summary>
                     <div class="faq-content">
                         The engineering building infrastructure is decent. Practical labs and workshops are average—they meet all your basic academic requirements and get the job done, but don't expect ultra-modern tech parks.
                     </div>
                 </details>
 
-                <details>
+                <details class="faq-item">
                     <summary>How are the professors and teaching staff?</summary>
                     <div class="faq-content">
                         Most faculty members are very knowledgeable and supportive! Each branch typically has a staff strength of 6–7 teachers (around 2-3 permanent faculty, and the rest are contractual). Don't hesitate to reach out to them for help.
                     </div>
                 </details>
 
-                <details>
+                <details class="faq-item">
                     <summary>What is the official status of the university?</summary>
                     <div class="faq-content">
                         Gurukul Kangri (GKDU) is a recognized <strong>Deemed-to-be University</strong>.
                     </div>
                 </details>
 
-                <details>
+                <details class="faq-item">
                     <summary>Is there a strict dress code?</summary>
                     <div class="faq-content">
                         Yes, Gurukul Kangri maintains a traditional environment. During initial days and formal events, standard decent clothing is expected. Avoid highly ripped jeans or overly casual wear in academic blocks.
@@ -486,16 +571,15 @@
 
             </div>
         </div>
-        <!-- END FAQ SECTION -->
 
-        <div class="review-section">
+        <div class="review-section reveal">
             <h2>⭐ Help Future Freshers!</h2>
             <p>Your experience can guide the next batch.</p>
             <a href="https://forms.gle/s2w2vbcMQtyx6h8x5" class="action-button" target="_blank">✍️ Drop a Review</a>
         </div>
 
-        <div class="footer">
-            <p>Crafted with <span>⚙️</span> by your senior</p>
+        <div class="footer reveal">
+            <p>Crafted with <span>❤️</span> by your senior</p>
         </div>
 
     </div>
@@ -505,7 +589,46 @@
         📢 Share Guide
     </button>
 
+    <!-- Advanced JavaScript Logic -->
     <script>
+        // 1. Theme Toggle Logic (Saves to Local Storage)
+        function toggleTheme() {
+            const body = document.documentElement;
+            const btn = document.getElementById('themeBtn');
+            
+            if (body.getAttribute('data-theme') === 'dark') {
+                body.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'light');
+                btn.innerHTML = "🌙 Dark";
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                btn.innerHTML = "☀️ Light";
+            }
+        }
+
+        // Initialize Theme on Page Load
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            document.getElementById('themeBtn').innerHTML = "☀️ Light";
+        }
+
+        // 2. Live Search Logic for FAQs
+        function filterFAQs() {
+            let input = document.getElementById('faqSearch').value.toLowerCase();
+            let details = document.querySelectorAll('.faq-item');
+
+            details.forEach((item) => {
+                let text = item.innerText.toLowerCase();
+                if (text.includes(input)) {
+                    item.style.display = "";
+                } else {
+                    item.style.display = "none";
+                }
+            });
+        }
+
+        // 3. Native Share API & Clipboard Fallback
         function shareWebsite() {
             const shareData = {
                 title: "GKDU Fresher's Guide 🚀",
@@ -513,12 +636,9 @@
                 url: window.location.href
             };
 
-            // Check if Web Share API is supported (mostly on mobile)
             if (navigator.share) {
-                navigator.share(shareData)
-                    .catch((error) => console.log('Error sharing:', error));
+                navigator.share(shareData).catch((error) => console.log('Error sharing:', error));
             } else {
-                // Fallback for PC/Unsupported browsers: Copy to clipboard
                 navigator.clipboard.writeText(window.location.href);
                 const btn = document.getElementById('shareButton');
                 const originalText = btn.innerHTML;
@@ -526,13 +646,34 @@
                 btn.innerHTML = "✅ COPIED!";
                 btn.style.background = "var(--color-green)";
                 
-                // Reset button after 2 seconds
                 setTimeout(() => {
                     btn.innerHTML = originalText;
                     btn.style.background = "var(--color-blue)";
                 }, 2000);
             }
         }
+
+        // 4. Scroll Reveal Animations (Intersection Observer)
+        document.addEventListener("DOMContentLoaded", function() {
+            const reveals = document.querySelectorAll(".reveal");
+
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("active");
+                        observer.unobserve(entry.target); // Stop observing once revealed
+                    }
+                });
+            }, {
+                root: null,
+                threshold: 0.15, // Trigger when 15% visible
+                rootMargin: "0px 0px -50px 0px"
+            });
+
+            reveals.forEach(reveal => {
+                revealObserver.observe(reveal);
+            });
+        });
     </script>
 </body>
 </html>
