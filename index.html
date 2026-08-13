@@ -6,120 +6,158 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gurukul Kangri (GKDU) Fresher's Guide</title>
     <meta name="description" content="The ultimate unofficial survival and resource guide for Gurukul Kangri (GKDU) freshers. Find WhatsApp groups, hostel tips, and FET previous year papers.">
-<meta name="keywords" content="Gurukul Kangri, GKDU, Haridwar, GKV freshers guide, GKDU admission, GKV hostel, FET previous year papers, B.Tech Haridwar">
+    <meta name="keywords" content="Gurukul Kangri, GKDU, Haridwar, GKV freshers guide, GKDU admission, GKV hostel, FET previous year papers, B.Tech Haridwar">
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        /* Modern, edgy tech font */
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap');
 
         :root {
-            --primary: #1E3A8A; /* Navy Blue */
-            --primary-light: #3B82F6;
-            --background: #F8FAFC;
-            --card-bg: #FFFFFF;
-            --text-main: #0F172A;
-            --text-muted: #475569;
-            --accent: #E2E8F0;
+            --bg-color: #f4f4f0;
+            --container-bg: #ffffff;
+            --text-main: #000000;
+            --border-color: #000000;
+            
+            /* Vibrant Neobrutalism Palette */
+            --color-yellow: #FFDE00;
+            --color-green: #00E676;
+            --color-pink: #FF90E8;
+            --color-blue: #90E0EF;
+            --color-purple: #CDB4DB;
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--background);
+            font-family: 'Space Grotesk', sans-serif;
+            /* Cool dot grid background */
+            background-color: var(--bg-color);
+            background-image: radial-gradient(#000000 1px, transparent 1px);
+            background-size: 20px 20px;
             color: var(--text-main);
             margin: 0;
             padding: 40px 20px;
             display: flex;
             justify-content: center;
+            line-height: 1.6;
         }
 
         .container {
             max-width: 800px;
             width: 100%;
-            background: var(--card-bg);
+            background: var(--container-bg);
             padding: 40px;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            border-top: 8px solid var(--primary);
+            border-radius: 12px;
+            /* Signature Neobrutalism hard shadow and thick border */
+            border: 4px solid var(--border-color);
+            box-shadow: 12px 12px 0px var(--border-color);
+            animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+
+        @keyframes popIn {
+            0% { transform: scale(0.95); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
         }
 
         .header {
             text-align: center;
             margin-bottom: 40px;
-            border-bottom: 2px solid var(--accent);
+            border-bottom: 4px solid var(--border-color);
             padding-bottom: 25px;
+            background: var(--color-yellow);
+            margin: -40px -40px 40px -40px;
+            padding: 40px 20px 30px 20px;
+            border-radius: 8px 8px 0 0;
         }
 
         .header h1 {
-            font-size: 2.6em;
-            color: var(--primary);
+            font-size: 2.8em;
             margin: 0 0 10px 0;
-            letter-spacing: -0.5px;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            text-shadow: 2px 2px 0px #fff;
         }
 
         .header p {
-            font-size: 1.15em;
-            color: var(--text-muted);
+            font-size: 1.2em;
+            font-weight: 700;
             margin: 0;
         }
 
         .section {
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
 
         .section-title {
-            font-size: 1.5em;
-            color: var(--primary);
+            font-size: 1.6em;
+            text-transform: uppercase;
             margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            display: inline-block;
+            background: var(--color-blue);
+            padding: 5px 15px;
+            border: 3px solid var(--border-color);
+            box-shadow: 4px 4px 0px var(--border-color);
+            transform: rotate(-1deg);
         }
 
         .grid-2 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            gap: 25px;
         }
 
         .card {
-            background: var(--background);
+            background: #fff;
             padding: 25px;
-            border-radius: 12px;
-            border: 1px solid var(--accent);
-            transition: transform 0.2s;
+            border-radius: 8px;
+            border: 3px solid var(--border-color);
+            box-shadow: 6px 6px 0px var(--border-color);
+            transition: all 0.2s ease;
         }
 
         .card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transform: translate(-2px, -2px);
+            box-shadow: 8px 8px 0px var(--border-color);
         }
 
         .card h3 {
-            margin: 0 0 15px 0;
-            font-size: 1.2em;
-            color: var(--text-main);
+            margin: 0 0 20px 0;
+            font-size: 1.3em;
+            text-transform: uppercase;
+            border-bottom: 2px dashed var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        /* Tactical Button Styling */
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
         }
 
         .btn {
             display: inline-block;
-            background: var(--primary);
-            color: #FFFFFF;
+            background: var(--color-pink);
+            color: var(--text-main) !important;
             padding: 12px 20px;
             text-decoration: none;
-            border-radius: 8px;
-            font-size: 0.95em;
-            font-weight: 600;
-            margin-bottom: 10px;
-            margin-right: 10px;
+            border-radius: 6px;
+            font-size: 1em;
+            font-weight: 700;
             text-align: center;
-            transition: opacity 0.2s;
+            border: 3px solid var(--border-color);
+            box-shadow: 4px 4px 0px var(--border-color);
+            transition: all 0.1s ease;
+            flex: 1 1 auto;
+            text-transform: uppercase;
         }
 
+        /* Press-down effect on hover */
         .btn:hover {
-            opacity: 0.9;
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px var(--border-color);
         }
 
         .btn-secondary {
-            background: var(--primary-light);
+            background: var(--color-green);
         }
 
         .link-list {
@@ -130,150 +168,237 @@
 
         .link-list li {
             margin-bottom: 12px;
-            padding-bottom: 12px;
-            border-bottom: 1px solid var(--accent);
-        }
-
-        .link-list li:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
         }
 
         .link-list a {
             text-decoration: none;
             color: var(--text-main);
-            font-weight: 600;
+            font-weight: 700;
             display: flex;
             justify-content: space-between;
+            padding: 10px;
+            border: 2px solid transparent;
+            transition: all 0.2s ease;
+        }
+        
+        .link-list a:hover {
+            background: var(--color-yellow);
+            border: 2px solid var(--border-color);
+            transform: translateX(5px);
         }
 
         .link-list a span {
-            color: var(--primary-light);
+            font-size: 0.9em;
+            font-weight: 700;
         }
 
         .tip-box {
-            background: #F0F9FF;
-            border-left: 4px solid var(--primary-light);
-            padding: 18px;
-            border-radius: 0 8px 8px 0;
-            margin-top: 15px;
-            font-size: 0.95em;
-            color: var(--text-muted);
-            line-height: 1.5;
+            background: #E0E7FF;
+            border: 3px solid var(--border-color);
+            border-left-width: 8px;
+            padding: 20px;
+            margin-top: 25px;
+            font-size: 1em;
+            font-weight: 700;
         }
 
         .tip-box strong {
-            color: var(--primary);
+            background: var(--color-yellow);
+            padding: 2px 5px;
+            border: 2px solid #000;
+            margin-right: 5px;
+        }
+
+        /* --- FAQ Section Styling --- */
+        .faq-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        details {
+            background: #fff;
+            border: 3px solid var(--border-color);
+            border-radius: 8px;
+            box-shadow: 4px 4px 0px var(--border-color);
+            overflow: hidden;
+            transition: all 0.2s ease;
+        }
+        
+        details[open] {
+            background: var(--color-yellow);
+        }
+        
+        summary {
+            font-size: 1.1em;
+            font-weight: 700;
+            padding: 15px;
+            cursor: pointer;
+            list-style: none; /* Hides default triangle */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        /* Custom Plus/Minus icons for Neobrutalism */
+        summary::-webkit-details-marker {
+            display: none;
+        }
+        summary::after {
+            content: '+';
+            font-size: 1.5em;
+            line-height: 1;
+        }
+        details[open] summary::after {
+            content: '-';
+        }
+        
+        .faq-content {
+            padding: 0 15px 15px 15px;
+            font-weight: 600;
+            font-size: 0.95em;
+            border-top: 3px dashed var(--border-color);
+            margin-top: 10px;
+            padding-top: 15px;
+            background: #fff; /* Keeps text readable when opened */
         }
 
         .review-section {
-            background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
-            padding: 30px;
-            border-radius: 16px;
+            background: var(--color-purple);
+            padding: 40px 30px;
+            border-radius: 12px;
             text-align: center;
-            border: 2px dashed #93C5FD;
-            margin-top: 40px;
+            border: 4px solid var(--border-color);
+            box-shadow: 8px 8px 0px var(--border-color);
+            margin-top: 50px;
+            transform: rotate(1deg);
         }
 
         .review-section h2 {
-            color: #1D4ED8;
             margin-top: 0;
+            font-size: 2em;
+            text-transform: uppercase;
         }
 
         .review-section p {
-            color: #3B82F6;
-            margin-bottom: 20px;
+            font-weight: 700;
+            font-size: 1.1em;
+            margin-bottom: 25px;
         }
 
-        .review-btn {
-            background: #2563EB;
-            color: white;
-            padding: 14px 28px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1em;
+        .action-button {
             display: inline-block;
-            box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
-            transition: transform 0.2s;
+            background: var(--color-yellow);
+            color: var(--text-main) !important;
+            text-decoration: none;
+            padding: 16px 32px;
+            border-radius: 6px; 
+            font-weight: 700;
+            font-size: 1.2em;
+            text-transform: uppercase;
+            text-align: center;
+            border: 4px solid var(--border-color);
+            box-shadow: 6px 6px 0px var(--border-color);
+            transition: all 0.1s ease; 
         }
-        
-        .review-btn:hover {
-            transform: scale(1.05);
+
+        .action-button:hover {
+            transform: translate(6px, 6px);
+            box-shadow: 0px 0px 0px var(--border-color);
+            background: var(--color-green);
         }
 
         .footer {
             text-align: center;
-            margin-top: 30px;
-            color: var(--text-muted);
-            font-weight: 600;
-            font-size: 0.95em;
+            margin-top: 40px;
+            font-weight: 700;
+            font-size: 1em;
+            border-top: 3px dashed var(--border-color);
+            padding-top: 20px;
         }
 
         .footer span {
-            color: #EF4444; /* Heart Color */
+            display: inline-block;
+            animation: spin 3s linear infinite;
         }
-                .action-button {
-            /* Creates a smooth blue gradient */
-            background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%);
-            color: #ffffff;
-            text-decoration: none;
-            padding: 16px 24px;
-            border-radius: 12px; /* Softer, rounder edges */
-            font-weight: 600;
+
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+
+        /* --- Floating Share Button Styling --- */
+        .floating-share {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--color-blue);
+            color: var(--text-main);
+            border: 4px solid var(--border-color);
+            box-shadow: 6px 6px 0px var(--border-color);
+            border-radius: 50px;
+            padding: 15px 25px;
             font-size: 1.1em;
-            width: 80%;
-            text-align: center;
-            /* Adds a soft glowing shadow around the button */
-            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
-            /* Tells the browser to animate changes smoothly */
-            transition: all 0.3s ease; 
+            font-weight: 700;
+            font-family: 'Space Grotesk', sans-serif;
+            cursor: pointer;
+            z-index: 1000;
+            transition: all 0.1s ease;
+            text-transform: uppercase;
+        }
+        
+        .floating-share:hover {
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px var(--border-color);
+            background: var(--color-pink);
         }
 
-        .action-button:hover {
-            /* Makes the button physically lift up when hovered over */
-            transform: translateY(-4px);
-            /* Makes the shadow bigger to complete the 3D effect */
-            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.5);
-            /* Reverses the gradient slightly for a nice visual pop */
-            background: linear-gradient(135deg, #3B82F6 0%, #1E3A8A 100%);
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            body { padding: 20px 10px; background-size: 15px 15px;}
+            .container { padding: 25px 20px; border-width: 3px; box-shadow: 8px 8px 0px var(--border-color);}
+            .header { margin: -25px -20px 30px -20px; padding: 30px 15px 20px 15px; }
+            .header h1 { font-size: 2.2em; }
+            .section-title { font-size: 1.3em; }
+            .action-button { width: 100%; box-sizing: border-box; }
+            .floating-share { bottom: 20px; right: 20px; padding: 12px 20px; font-size: 1em; }
         }
-
-
     </style>
 </head>
 <body>
 
     <div class="container">
         <div class="header">
-            <h1>Gurukul Kangri (GKDU)</h1>
-            <p>The Unofficial Resource & Community Guide for Freshers</p>
+            <h1>Gurukul Kangri</h1>
+            <p>The Unofficial Fresher's Guide 🚀</p>
         </div>
 
         <div class="section">
-            <h2 class="section-title">🏛️ Official College Portals</h2>
+            <h2 class="section-title">🏛️ College Portals</h2>
             <div class="card">
-                <a href="https://share.google/vnUCMSDR4Nt3ovtIa" class="btn">Open Main Website</a>
-                <a href="https://share.google/mQrSIhndp8oXtUgdC" class="btn btn-secondary">Open Alternate Portal</a>
+                <div class="btn-group">
+                    <a href="https://share.google/vnUCMSDR4Nt3ovtIa" class="btn">Main Website ↗</a>
+                    <a href="https://share.google/mQrSIhndp8oXtUgdC" class="btn btn-secondary">Alternate Portal ↗</a>
+                </div>
             </div>
         </div>
 
         <div class="section">
-            <h2 class="section-title">📱 Campus Community & Groups</h2>
+            <h2 class="section-title">📱 Campus Community</h2>
             <div class="grid-2">
                 <div class="card">
-                    <h3>Important Chat Groups</h3>
-                    <a href="https://ig.me/j/AbYV1fHlJ03KWBBm/" class="btn">👨🏽 Join Boys Discussion Group</a>
-                    <a href="https://ig.me/j/AbYq82f0ZOMoNNI3/" class="btn btn-secondary">👩🏽 Join Girls Discussion Group (only for girls)</a>
+                    <h3>Chat Groups</h3>
+                    <div class="btn-group" style="flex-direction: column;">
+                        <a href="https://ig.me/j/AbYV1fHlJ03KWBBm/" class="btn">👨🏽 Boys Discussion</a>
+                        <a href="https://ig.me/j/AbYq82f0ZOMoNNI3/" class="btn" style="background: var(--color-blue);">👩🏽 Girls Discussion</a>
+                    </div>
                 </div>
                 <div class="card">
-                    <h3>Instagram Directory</h3>
+                    <h3>Insta Directory</h3>
                     <ul class="link-list">
-                        <li><a href="https://www.instagram.com/gkv_hdr?igsh=MTk0ZGprc3I2dWtrYQ==">Official GKV Page <span>Open ↗</span></a></li>
-                        <li><a href="https://www.instagram.com/gkviians?igsh=MjJjemZsaGZ3MzN5">@gkviians (Memes) <span>Open ↗</span></a></li>
-                        <li><a href="https://www.instagram.com/na_samaz_bandar?igsh=MTh4bngxaTRzcnc5YQ==">@na_samaz_bandar <span>Open ↗</span></a></li>
-                        <li><a href="https://www.instagram.com/lekhram_diaries?igsh=cGI0amozZXNzb3Ru">@lekhram_diaries <span>Open ↗</span></a></li>
+                        <li><a href="https://www.instagram.com/gkv_hdr?igsh=MTk0ZGprc3I2dWtrYQ==" target="_blank">Official GKV Page <span>↗</span></a></li>
+                        <li><a href="https://www.instagram.com/gkviians?igsh=MjJjemZsaGZ3MzN5" target="_blank">@gkviians (Memes) <span>↗</span></a></li>
+                        <li><a href="https://www.instagram.com/na_samaz_bandar?igsh=MTh4bngxaTRzcnc5YQ==" target="_blank">@na_samaz_bandar <span>↗</span></a></li>
+                        <li><a href="https://www.instagram.com/lekhram_diaries?igsh=cGI0amozZXNzb3Ru" target="_blank">@lekhram_diaries <span>↗</span></a></li>
                     </ul>
                 </div>
             </div>
@@ -282,36 +407,132 @@
         <div class="section">
             <h2 class="section-title">📚 Academic Resources</h2>
             <div class="card">
-                <a herd="https://shorturl.at/dBzRN" class="btn">Download all Departments Previous Year Papers</a>
-                <a href="https://share.google/G90iNCkTZpMHpG3pT" class="btn">Download FET Previous Year Papers</a>
+                <div class="btn-group" style="flex-direction: column;">
+                    <a href="https://drive.google.com/drive/mobile/folders/1nVBWVYDDvre_38XRq506y6ii7-zo_XT6?fbclid=PAT01DUATq69FwZG9mAmV4dG4DYWVtAjEwAHNydGMGYXBwX2lkDzU2NzA2NzM0MzM1MjQyNwABp4gyXM6uuy0MKePYEZRO-ErmfkhkNwGhJSHX6svjKgQfqNAwKKPBEt9qq8gv_aem_P1S3L95_kZj3q1tY1_MxcQ" class="btn" style="background: var(--color-yellow);">Download All Papers</a>
+                    <a href="https://share.google/G90iNCkTZpMHpG3pT" class="btn btn-secondary">FET Previous Papers</a>
+                </div>
                 <div class="tip-box">
-                    <strong>💡 Academic Tip:</strong> The first semester sets your trajectory. Securing a high SGPA early on provides a massive advantage. Focus heavily on mastering your core subjects and practicals right from the start.
+                    <strong>💡 PRO TIP:</strong> The first semester sets your trajectory. Securing a high SGPA early on provides a massive advantage. Focus heavily on mastering core subjects!
                 </div>
             </div>
         </div>
 
         <div class="section">
-            <h2 class="section-title">🏢 Campus & Hostel Guide</h2>
+            <h2 class="section-title">🏢 Campus & Hostel</h2>
             <div class="card">
-                <a href="https://maps.app.goo.gl/mDGiPte6tJTpeBtB7" class="btn">View Hostel Images</a>
-                <a href="https://maps.app.goo.gl/F7QrGuoJQ2ATgpur8" class="btn btn-secondary">View Campus Images</a>
+                <div class="btn-group">
+                    <a href="https://maps.app.goo.gl/mDGiPte6tJTpeBtB7" class="btn" target="_blank">Hostel Images 📸</a>
+                    <a href="https://maps.app.goo.gl/F7QrGuoJQ2ATgpur8" class="btn" style="background: var(--color-purple);" target="_blank">Campus Images 📸</a>
+                </div>
                 <div class="tip-box">
-                    <strong>💡 Hostel Tip:</strong> Be self-reliant! Campus amenities can sometimes be unpredictable. It is highly recommended to bring your own dry snacks, basic utensils.
+                    <strong>💡 SURVIVAL TIP:</strong> Be self-reliant! Campus amenities can be unpredictable. Highly recommend bringing your own dry snacks and basic utensils.
                 </div>
             </div>
         </div>
 
+        <!-- NEW FAQ SECTION -->
+        <div class="section">
+            <h2 class="section-title">💬 Fresher FAQs</h2>
+            <div class="faq-container">
+                
+                <details>
+                    <summary>Are laptops mandatory for 1st-year?</summary>
+                    <div class="faq-content">
+                        While not strictly mandatory for day one, you'll need one for coding assignments and projects by the middle of the first semester. A decent mid-range laptop is enough!
+                    </div>
+                </details>
+                
+                <details>
+                    <summary>Is a hostel room guaranteed for freshers?</summary>
+                    <div class="faq-content">
+                        Not automatically. Hostel seats are limited and allotted strictly on a <strong>first-come, first-served</strong> basis. Generally, 1st-year students and a few 2nd-year students get accommodation. Apply as early as possible!
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Honest review: How are the hostel facilities?</summary>
+                    <div class="faq-content">
+                        To be completely transparent, it's a basic survival experience. Students occasionally face issues with water supply, sanitation, and average mess food. We highly recommend being self-reliant and keeping dry snacks handy!
+                    </div>
+                </details>
+
+                <details>
+                    <summary>How are the classrooms and practical labs?</summary>
+                    <div class="faq-content">
+                        The engineering building infrastructure is decent. Practical labs and workshops are average—they meet all your basic academic requirements and get the job done, but don't expect ultra-modern tech parks.
+                    </div>
+                </details>
+
+                <details>
+                    <summary>How are the professors and teaching staff?</summary>
+                    <div class="faq-content">
+                        Most faculty members are very knowledgeable and supportive! Each branch typically has a staff strength of 6–7 teachers (around 2-3 permanent faculty, and the rest are contractual). Don't hesitate to reach out to them for help.
+                    </div>
+                </details>
+
+                <details>
+                    <summary>What is the official status of the university?</summary>
+                    <div class="faq-content">
+                        Gurukul Kangri (GKDU) is a recognized <strong>Deemed-to-be University</strong>.
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Is there a strict dress code?</summary>
+                    <div class="faq-content">
+                        Yes, Gurukul Kangri maintains a traditional environment. During initial days and formal events, standard decent clothing is expected. Avoid highly ripped jeans or overly casual wear in academic blocks.
+                    </div>
+                </details>
+
+            </div>
+        </div>
+        <!-- END FAQ SECTION -->
+
         <div class="review-section">
             <h2>⭐ Help Future Freshers!</h2>
-            <p> Leave a suggestion .</p>
-            <a href="https://forms.gle/s2w2vbcMQtyx6h8x5" class="review-btn" target="_blank">✍️ Submit Your Review & Tips</a>
+            <p>Your experience can guide the next batch.</p>
+            <a href="https://forms.gle/s2w2vbcMQtyx6h8x5" class="action-button" target="_blank">✍️ Drop a Review</a>
         </div>
 
         <div class="footer">
-            <p>Crafted with <span>❤️</span> by your senior </p>
+            <p>Crafted with <span>⚙️</span> by your senior</p>
         </div>
 
     </div>
 
+    <!-- Floating Share Button -->
+    <button class="floating-share" id="shareButton" onclick="shareWebsite()">
+        📢 Share Guide
+    </button>
+
+    <script>
+        function shareWebsite() {
+            const shareData = {
+                title: "GKDU Fresher's Guide 🚀",
+                text: "Check out this ultimate unofficial survival guide for Gurukul Kangri freshers! Notes, WhatsApp groups, and hostel tips inside.",
+                url: window.location.href
+            };
+
+            // Check if Web Share API is supported (mostly on mobile)
+            if (navigator.share) {
+                navigator.share(shareData)
+                    .catch((error) => console.log('Error sharing:', error));
+            } else {
+                // Fallback for PC/Unsupported browsers: Copy to clipboard
+                navigator.clipboard.writeText(window.location.href);
+                const btn = document.getElementById('shareButton');
+                const originalText = btn.innerHTML;
+                
+                btn.innerHTML = "✅ COPIED!";
+                btn.style.background = "var(--color-green)";
+                
+                // Reset button after 2 seconds
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.style.background = "var(--color-blue)";
+                }, 2000);
+            }
+        }
+    </script>
 </body>
 </html>
