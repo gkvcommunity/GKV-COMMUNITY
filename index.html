@@ -4,1857 +4,1034 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="google-site-verification" content="Ck-24AGvEDrzbbaaQAFbJKvtXCeFJHs_MHyeK7zBKbQ">
+<meta name="google-site-verification"
+content="Ck-24AGvEDrzbbaaQAFbJKvtXCeFJHs_MHyeK7zBKbQ">
 
 <title>GKDU Fresher's Guide | Gurukul Kangri</title>
 
 <meta name="description"
-content="Unofficial Gurukul Kangri University Fresher's Guide with engineering syllabus, 2025 PYQs, academic resources, hostel information and student communities.">
+content="The unofficial GKDU Fresher's Guide with syllabus, previous year papers, student portals, campus resources, hostel information and fresher FAQs.">
 
-<meta name="theme-color" content="#2563eb">
+<meta name="theme-color" content="#0b1f3a">
 
 <style>
 
 /* =========================================================
-   RESET
+   GLOBAL
 ========================================================= */
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root{
+    --bg:#f5f7fb;
+    --surface:#ffffff;
+    --surface-2:#f0f4f9;
+
+    --text:#102033;
+    --muted:#66758a;
+
+    --primary:#155eef;
+    --primary-dark:#0b45bd;
+    --primary-soft:#e9f0ff;
+
+    --border:#dbe3ee;
+
+    --success:#079455;
+    --success-soft:#e8f8f1;
+
+    --warning:#b54708;
+    --warning-soft:#fff3e8;
+
+    --shadow:0 8px 25px rgba(16,32,51,.07);
+    --shadow-hover:0 14px 35px rgba(16,32,51,.12);
+
+    --radius:16px;
+}
+
+[data-theme="dark"]{
+    --bg:#09111f;
+    --surface:#101b2d;
+    --surface-2:#16243a;
+
+    --text:#f1f5f9;
+    --muted:#a8b5c7;
+
+    --primary:#6d9cff;
+    --primary-dark:#8badff;
+    --primary-soft:#182b50;
+
+    --border:#263852;
+
+    --success:#55d6a0;
+    --success-soft:#102d26;
+
+    --warning:#ffb86b;
+    --warning-soft:#332316;
+
+    --shadow:0 8px 25px rgba(0,0,0,.22);
+    --shadow-hover:0 15px 35px rgba(0,0,0,.32);
+}
+
 *{
-    margin:0;
-    padding:0;
     box-sizing:border-box;
 }
 
 html{
     scroll-behavior:smooth;
-    scroll-padding-top:90px;
 }
 
 body{
-    font-family:
-        Inter,
-        system-ui,
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        sans-serif;
-
-    background:#f5f7fb;
-    color:#172033;
+    margin:0;
+    font-family:'Inter',sans-serif;
+    background:var(--bg);
+    color:var(--text);
     line-height:1.6;
-
     transition:
-        background .3s ease,
-        color .3s ease;
-
-    overflow-x:hidden;
-}
-
-button,
-input{
-    font:inherit;
+        background .25s ease,
+        color .25s ease;
 }
 
 a{
     color:inherit;
 }
 
+button,
+a{
+    -webkit-tap-highlight-color:transparent;
+}
 
 /* =========================================================
-   VARIABLES
+   PAGE
 ========================================================= */
 
-:root{
-
-    --primary:#2563eb;
-    --primary-dark:#1d4ed8;
-
-    --green:#059669;
-    --green-light:#ecfdf5;
-
-    --blue-light:#eff6ff;
-
-    --purple:#7c3aed;
-    --purple-light:#f5f3ff;
-
-    --yellow:#f59e0b;
-    --yellow-light:#fffbeb;
-
-    --red:#dc2626;
-    --red-light:#fef2f2;
-
-    --bg:#f5f7fb;
-    --surface:#ffffff;
-
-    --text:#172033;
-    --muted:#64748b;
-
-    --border:#e2e8f0;
-
-    --shadow:
-        0 8px 30px rgba(15,23,42,.07);
-
-    --radius:16px;
+.page{
+    width:min(1050px, calc(100% - 28px));
+    margin:28px auto 80px;
 }
-
-
-[data-theme="dark"]{
-
-    --bg:#0f172a;
-    --surface:#182235;
-
-    --text:#f8fafc;
-    --muted:#a9b5c7;
-
-    --border:#29364d;
-
-    --shadow:
-        0 10px 35px rgba(0,0,0,.25);
-}
-
 
 /* =========================================================
-   SCROLL PROGRESS
+   HEADER
 ========================================================= */
 
-.progress{
-    position:fixed;
-
-    top:0;
-    left:0;
-
-    height:3px;
-    width:0;
+.hero{
+    position:relative;
+    overflow:hidden;
 
     background:
-        linear-gradient(
-            90deg,
-            #2563eb,
-            #7c3aed
-        );
+        linear-gradient(135deg,#0b1f3a,#123c73);
 
-    z-index:9999;
+    color:white;
+
+    border-radius:22px;
+    padding:48px 38px;
+
+    box-shadow:
+        0 18px 45px rgba(11,31,58,.18);
+
+    animation:heroIn .7s ease both;
 }
 
+.hero::before{
+    content:"";
+    position:absolute;
 
-/* =========================================================
-   NAVBAR
-========================================================= */
+    width:280px;
+    height:280px;
 
-.navbar{
+    right:-100px;
+    top:-120px;
 
-    position:sticky;
+    border-radius:50%;
 
-    top:0;
-
-    z-index:1000;
-
-    background:
-        rgba(255,255,255,.9);
-
-    backdrop-filter:
-        blur(14px);
-
-    border-bottom:
-        1px solid var(--border);
-
-    transition:.3s;
+    background:rgba(255,255,255,.07);
 }
 
-[data-theme="dark"] .navbar{
-    background:
-        rgba(15,23,42,.9);
+.hero::after{
+    content:"";
+    position:absolute;
+
+    width:180px;
+    height:180px;
+
+    left:-90px;
+    bottom:-100px;
+
+    border-radius:50%;
+
+    background:rgba(83,145,255,.15);
 }
 
-.nav-inner{
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:720px;
+}
 
-    max-width:1100px;
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
 
-    margin:auto;
+    padding:7px 12px;
 
-    padding:
-        14px 20px;
+    border:1px solid rgba(255,255,255,.2);
+    border-radius:999px;
+
+    background:rgba(255,255,255,.1);
+
+    font-size:.82rem;
+    font-weight:700;
+
+    margin-bottom:18px;
+}
+
+.hero h1{
+    margin:0;
+
+    font-size:clamp(2rem,6vw,3.5rem);
+    line-height:1.05;
+
+    letter-spacing:-1.5px;
+}
+
+.hero p{
+    margin:17px 0 0;
+
+    max-width:650px;
+
+    color:#d8e4f5;
+
+    font-size:1.05rem;
+}
+
+.hero-actions{
+    margin-top:28px;
 
     display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-    gap:20px;
+    flex-wrap:wrap;
+    gap:12px;
 }
 
-.brand{
-
-    display:flex;
-
+.hero-button{
+    display:inline-flex;
     align-items:center;
+    justify-content:center;
 
-    gap:11px;
+    padding:12px 17px;
+
+    border-radius:11px;
 
     text-decoration:none;
 
-    font-weight:800;
+    font-size:.92rem;
+    font-weight:700;
 
-    font-size:1.05rem;
+    background:white;
+    color:#0b1f3a;
 
-    white-space:nowrap;
+    transition:.18s ease;
 }
 
-.brand-logo{
+.hero-button.secondary{
+    background:rgba(255,255,255,.1);
+    color:white;
 
-    width:40px;
-    height:40px;
+    border:1px solid rgba(255,255,255,.2);
+}
+
+.hero-button:hover{
+    transform:translateY(-2px);
+}
+
+.hero-button:active{
+    transform:scale(.96);
+}
+
+/* =========================================================
+   THEME BUTTON
+========================================================= */
+
+.theme-button{
+    position:absolute;
+    z-index:5;
+
+    top:18px;
+    right:18px;
+
+    border:1px solid rgba(255,255,255,.25);
+
+    background:rgba(255,255,255,.1);
+
+    color:white;
+
+    border-radius:10px;
+
+    padding:9px 12px;
+
+    cursor:pointer;
+
+    font-family:inherit;
+    font-weight:700;
+
+    transition:.18s ease;
+}
+
+.theme-button:hover{
+    background:rgba(255,255,255,.18);
+}
+
+.theme-button:active{
+    transform:scale(.93);
+}
+
+/* =========================================================
+   IMPORTANT RESOURCES
+========================================================= */
+
+.important{
+    margin-top:26px;
+}
+
+.section-heading{
+    margin:0 0 16px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    gap:15px;
+}
+
+.section-heading h2{
+    margin:0;
+
+    font-size:1.35rem;
+    letter-spacing:-.3px;
+}
+
+.section-heading p{
+    margin:0;
+
+    color:var(--muted);
+
+    font-size:.86rem;
+}
+
+.resource-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:15px;
+}
+
+.resource-card{
+    position:relative;
+
+    padding:22px;
+
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+
+    background:var(--surface);
+
+    box-shadow:var(--shadow);
+
+    text-decoration:none;
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        border-color .2s ease;
+}
+
+.resource-card:hover{
+    transform:translateY(-4px);
+    box-shadow:var(--shadow-hover);
+    border-color:var(--primary);
+}
+
+.resource-card:active{
+    transform:translateY(1px) scale(.985);
+    box-shadow:var(--shadow);
+}
+
+.resource-icon{
+    width:45px;
+    height:45px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:12px;
+
+    background:var(--primary-soft);
+
+    font-size:1.35rem;
+
+    margin-bottom:15px;
+}
+
+.resource-card h3{
+    margin:0 0 5px;
+
+    font-size:1rem;
+}
+
+.resource-card p{
+    margin:0;
+
+    color:var(--muted);
+
+    font-size:.83rem;
+}
+
+.arrow{
+    position:absolute;
+
+    top:20px;
+    right:20px;
+
+    color:var(--muted);
+
+    transition:.2s ease;
+}
+
+.resource-card:hover .arrow{
+    color:var(--primary);
+    transform:translate(2px,-2px);
+}
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+.section{
+    margin-top:48px;
+}
+
+.section-title{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    margin-bottom:17px;
+}
+
+.section-title .number{
+    width:34px;
+    height:34px;
 
     display:grid;
     place-items:center;
 
     background:var(--primary);
-
     color:white;
-
-    border-radius:11px;
-
-    font-weight:800;
-
-    box-shadow:
-        0 5px 15px
-        rgba(37,99,235,.25);
-}
-
-.nav-links{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:5px;
-}
-
-.nav-links a{
-
-    text-decoration:none;
-
-    color:var(--muted);
-
-    padding:
-        8px 11px;
-
-    border-radius:8px;
-
-    font-size:.9rem;
-
-    font-weight:600;
-
-    transition:.2s;
-}
-
-.nav-links a:hover{
-
-    background:
-        var(--blue-light);
-
-    color:
-        var(--primary);
-}
-
-[data-theme="dark"] .nav-links a:hover{
-    background:#202d43;
-}
-
-.theme-btn{
-
-    border:1px solid var(--border);
-
-    background:var(--surface);
-
-    color:var(--text);
-
-    width:40px;
-    height:40px;
 
     border-radius:10px;
-
-    cursor:pointer;
-
-    transition:.2s;
-}
-
-.theme-btn:hover{
-    transform:translateY(-2px);
-}
-
-
-/* =========================================================
-   HERO
-========================================================= */
-
-.hero{
-
-    max-width:1100px;
-
-    margin:
-        35px auto 25px;
-
-    padding:
-        55px 35px;
-
-    border-radius:
-        24px;
-
-    background:
-
-        radial-gradient(
-            circle at 90% 10%,
-            rgba(255,255,255,.2),
-            transparent 30%
-        ),
-
-        linear-gradient(
-            135deg,
-            #1d4ed8,
-            #2563eb 55%,
-            #4f46e5
-        );
-
-    color:white;
-
-    position:relative;
-
-    overflow:hidden;
-
-    box-shadow:
-        0 20px 50px
-        rgba(37,99,235,.22);
-
-    animation:
-        heroIn .7s ease;
-}
-
-.hero::after{
-
-    content:"";
-
-    position:absolute;
-
-    width:260px;
-    height:260px;
-
-    border-radius:50%;
-
-    border:
-        45px solid
-        rgba(255,255,255,.06);
-
-    right:-90px;
-    top:-100px;
-}
-
-.hero-content{
-
-    max-width:700px;
-
-    position:relative;
-
-    z-index:2;
-}
-
-.badge{
-
-    display:inline-flex;
-
-    align-items:center;
-
-    gap:7px;
-
-    padding:
-        6px 12px;
-
-    border-radius:100px;
-
-    background:
-        rgba(255,255,255,.13);
-
-    border:
-        1px solid
-        rgba(255,255,255,.25);
 
     font-size:.82rem;
-
-    font-weight:700;
-
-    margin-bottom:16px;
-}
-
-.hero h1{
-
-    font-size:
-        clamp(2.2rem,6vw,4rem);
-
-    line-height:1.05;
-
-    letter-spacing:-1.5px;
-
-    margin-bottom:15px;
-}
-
-.hero p{
-
-    font-size:
-        clamp(1rem,2vw,1.15rem);
-
-    color:
-        rgba(255,255,255,.86);
-
-    max-width:620px;
-
-    margin-bottom:25px;
-}
-
-.hero-buttons{
-
-    display:flex;
-
-    flex-wrap:wrap;
-
-    gap:12px;
-}
-
-.hero-btn{
-
-    display:inline-flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:8px;
-
-    text-decoration:none;
-
-    padding:
-        12px 18px;
-
-    border-radius:10px;
-
-    font-weight:700;
-
-    transition:.2s;
-}
-
-.hero-btn.primary{
-
-    background:white;
-
-    color:#1d4ed8;
-}
-
-.hero-btn.secondary{
-
-    background:
-        rgba(255,255,255,.12);
-
-    color:white;
-
-    border:
-        1px solid
-        rgba(255,255,255,.3);
-}
-
-.hero-btn:hover{
-
-    transform:
-        translateY(-3px);
-
-    box-shadow:
-        0 8px 20px
-        rgba(0,0,0,.15);
-}
-
-@keyframes heroIn{
-
-    from{
-        opacity:0;
-        transform:
-            translateY(20px);
-    }
-
-    to{
-        opacity:1;
-        transform:
-            translateY(0);
-    }
-}
-
-
-/* =========================================================
-   MAIN
-========================================================= */
-
-.container{
-
-    max-width:1100px;
-
-    margin:auto;
-
-    padding:
-        10px 20px 70px;
-}
-
-
-/* =========================================================
-   QUICK ACCESS
-========================================================= */
-
-.section-heading{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:end;
-
-    gap:15px;
-
-    margin:
-        45px 0 18px;
-}
-
-.section-heading h2{
-
-    font-size:
-        1.55rem;
-
-    letter-spacing:
-        -.5px;
-}
-
-.section-heading p{
-
-    color:var(--muted);
-
-    font-size:.9rem;
-}
-
-.quick-grid{
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
-    gap:16px;
-}
-
-.quick-card{
-
-    background:
-        var(--surface);
-
-    border:
-        1px solid
-        var(--border);
-
-    border-radius:
-        var(--radius);
-
-    padding:
-        22px;
-
-    text-decoration:none;
-
-    box-shadow:
-        var(--shadow);
-
-    position:relative;
-
-    overflow:hidden;
-
-    transition:
-        transform .25s ease,
-        box-shadow .25s ease,
-        border-color .25s ease;
-}
-
-.quick-card:hover{
-
-    transform:
-        translateY(-6px);
-
-    box-shadow:
-        0 15px 40px
-        rgba(15,23,42,.12);
-
-    border-color:
-        #bfdbfe;
-}
-
-.quick-icon{
-
-    width:46px;
-    height:46px;
-
-    display:grid;
-
-    place-items:center;
-
-    border-radius:12px;
-
-    font-size:1.35rem;
-
-    margin-bottom:16px;
-}
-
-.icon-blue{
-    background:var(--blue-light);
-}
-
-.icon-green{
-    background:var(--green-light);
-}
-
-.icon-purple{
-    background:var(--purple-light);
-}
-
-.icon-yellow{
-    background:var(--yellow-light);
-}
-
-.quick-card h3{
-
-    font-size:
-        1rem;
-
-    margin-bottom:4px;
-}
-
-.quick-card p{
-
-    color:var(--muted);
-
-    font-size:.84rem;
-}
-
-
-/* =========================================================
-   RESOURCE SECTIONS
-========================================================= */
-
-.section{
-    margin-top:60px;
-}
-
-.section-title{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:10px;
-
-    margin-bottom:20px;
-}
-
-.section-title-icon{
-
-    width:42px;
-    height:42px;
-
-    display:grid;
-    place-items:center;
-
-    background:var(--blue-light);
-
-    border-radius:11px;
-
-    font-size:1.25rem;
-}
-
-[data-theme="dark"] .section-title-icon{
-    background:#202d43;
+    font-weight:800;
 }
 
 .section-title h2{
+    margin:0;
 
-    font-size:
-        1.55rem;
-
-    letter-spacing:
-        -.5px;
+    font-size:1.35rem;
+    letter-spacing:-.4px;
 }
 
-.section-title small{
-
-    display:block;
-
-    color:var(--muted);
-
-    font-size:.82rem;
-
-    font-weight:500;
-
-    margin-top:2px;
+.grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
 }
-
 
 /* =========================================================
    CARDS
 ========================================================= */
 
-.grid{
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(2,1fr);
-
-    gap:20px;
-}
-
 .card{
+    background:var(--surface);
 
-    background:
-        var(--surface);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
 
-    border:
-        1px solid
-        var(--border);
+    padding:23px;
 
-    border-radius:
-        var(--radius);
-
-    padding:
-        24px;
-
-    box-shadow:
-        var(--shadow);
+    box-shadow:var(--shadow);
 
     transition:
-        transform .25s ease,
-        box-shadow .25s ease;
+        transform .2s ease,
+        box-shadow .2s ease,
+        border-color .2s ease;
 }
 
 .card:hover{
-
-    transform:
-        translateY(-4px);
-
-    box-shadow:
-        0 15px 40px
-        rgba(15,23,42,.1);
-}
-
-.card-header{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-    gap:10px;
-
-    margin-bottom:18px;
+    transform:translateY(-3px);
+    box-shadow:var(--shadow-hover);
 }
 
 .card h3{
+    margin:0 0 16px;
 
-    font-size:
-        1.05rem;
+    font-size:1rem;
 }
 
-.card-label{
-
-    font-size:.72rem;
-
-    padding:
-        4px 8px;
-
-    border-radius:6px;
-
-    background:
-        var(--blue-light);
-
-    color:
-        var(--primary);
-
-    font-weight:700;
+.card-description{
+    color:var(--muted);
+    font-size:.87rem;
+    margin:-8px 0 16px;
 }
-
 
 /* =========================================================
    BUTTONS
 ========================================================= */
 
 .buttons{
-
-    display:grid;
-
+    display:flex;
+    flex-direction:column;
     gap:10px;
 }
 
 .btn{
-
     display:flex;
-
     align-items:center;
-
     justify-content:space-between;
-
-    gap:10px;
 
     width:100%;
 
-    padding:
-        12px 14px;
+    padding:12px 14px;
 
-    border-radius:
-        10px;
+    border-radius:10px;
+
+    border:1px solid var(--border);
+
+    background:var(--surface-2);
+
+    color:var(--text);
 
     text-decoration:none;
 
-    border:
-        1px solid
-        var(--border);
-
-    background:
-        var(--surface);
-
-    font-size:.9rem;
-
+    font-size:.88rem;
     font-weight:700;
 
-    transition:.2s;
+    transition:
+        transform .16s ease,
+        background .16s ease,
+        border-color .16s ease;
 }
 
 .btn:hover{
+    background:var(--primary-soft);
+    border-color:var(--primary);
 
-    transform:
-        translateX(4px);
-
-    border-color:
-        #93c5fd;
-
-    background:
-        var(--blue-light);
-
-    color:
-        var(--primary);
+    transform:translateX(3px);
 }
 
-.btn-main{
+.btn:active{
+    transform:scale(.975);
+}
 
-    background:
-        var(--primary);
-
-    border-color:
-        var(--primary);
-
+.btn.primary{
+    background:var(--primary);
+    border-color:var(--primary);
     color:white;
 }
 
-.btn-main:hover{
-
-    background:
-        var(--primary-dark);
-
-    color:white;
+.btn.primary:hover{
+    background:var(--primary-dark);
 }
 
+.btn.green{
+    background:var(--success-soft);
+    border-color:rgba(7,148,85,.25);
+}
+
+.btn.warning{
+    background:var(--warning-soft);
+    border-color:rgba(181,71,8,.2);
+}
+
+.btn-left{
+    display:flex;
+    align-items:center;
+    gap:9px;
+}
+
+.btn-arrow{
+    opacity:.55;
+}
 
 /* =========================================================
-   ACADEMIC FEATURE
+   COMMUNITY
 ========================================================= */
 
-.academic-grid{
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(2,1fr);
-
-    gap:20px;
+.social-list{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
 }
 
-.academic-card{
-
-    padding:
-        30px;
-
-    border-radius:
-        18px;
-
-    color:white;
-
-    position:relative;
-
-    overflow:hidden;
-
-    box-shadow:
-        var(--shadow);
-
-    transition:.25s;
-}
-
-.academic-card:hover{
-
-    transform:
-        translateY(-5px);
-}
-
-.academic-card.blue{
-
-    background:
-        linear-gradient(
-            135deg,
-            #2563eb,
-            #4f46e5
-        );
-}
-
-.academic-card.green{
-
-    background:
-        linear-gradient(
-            135deg,
-            #059669,
-            #0d9488
-        );
-}
-
-.academic-card::after{
-
-    content:"";
-
-    position:absolute;
-
-    width:130px;
-    height:130px;
-
-    border-radius:50%;
-
-    border:
-        25px solid
-        rgba(255,255,255,.08);
-
-    right:-45px;
-    bottom:-45px;
-}
-
-.academic-card .emoji{
-
-    font-size:
-        2rem;
-
-    margin-bottom:
-        15px;
-}
-
-.academic-card h3{
-
-    font-size:
-        1.35rem;
-
-    margin-bottom:
-        7px;
-}
-
-.academic-card p{
-
-    color:
-        rgba(255,255,255,.82);
-
-    font-size:
-        .9rem;
-
-    margin-bottom:
-        20px;
-}
-
-.white-btn{
-
-    display:inline-flex;
-
+.social{
+    display:flex;
+    justify-content:space-between;
     align-items:center;
 
-    gap:7px;
-
-    background:white;
-
-    color:#172033;
-
-    text-decoration:none;
-
-    padding:
-        10px 15px;
+    padding:11px 12px;
 
     border-radius:9px;
 
-    font-weight:700;
-
-    font-size:.88rem;
-
-    transition:.2s;
-}
-
-.white-btn:hover{
-
-    transform:
-        translateY(-2px);
-
-    box-shadow:
-        0 6px 15px
-        rgba(0,0,0,.15);
-}
-
-
-/* =========================================================
-   INFO BOX
-========================================================= */
-
-.info{
-
-    display:flex;
-
-    gap:12px;
-
-    padding:
-        15px;
-
-    margin-top:18px;
-
-    background:
-        var(--yellow-light);
-
-    border:
-        1px solid #fde68a;
-
-    border-radius:
-        10px;
-
-    color:
-        #92400e;
+    text-decoration:none;
 
     font-size:.87rem;
-
     font-weight:600;
+
+    transition:.17s ease;
 }
 
-[data-theme="dark"] .info{
-    background:#332b13;
-    border-color:#66551d;
-    color:#fcd34d;
+.social:hover{
+    background:var(--surface-2);
+    transform:translateX(4px);
 }
 
-
-/* =========================================================
-   FAQ SEARCH
-========================================================= */
-
-.search-wrapper{
-
-    position:relative;
-
-    margin-bottom:18px;
-}
-
-.search-icon{
-
-    position:absolute;
-
-    left:15px;
-
-    top:50%;
-
-    transform:
-        translateY(-50%);
-
+.social span:last-child{
     color:var(--muted);
 }
 
-.search{
+/* =========================================================
+   TIP
+========================================================= */
 
+.tip{
+    margin-top:18px;
+
+    padding:16px;
+
+    border-left:4px solid var(--primary);
+
+    background:var(--primary-soft);
+
+    border-radius:9px;
+
+    font-size:.86rem;
+}
+
+.tip strong{
+    display:block;
+    margin-bottom:4px;
+}
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+.search{
     width:100%;
 
-    padding:
-        14px 45px;
+    padding:14px 15px;
 
-    border:
-        1px solid
-        var(--border);
+    background:var(--surface);
 
-    background:
-        var(--surface);
+    border:1px solid var(--border);
 
-    color:
-        var(--text);
+    border-radius:11px;
 
-    border-radius:
-        12px;
+    color:var(--text);
+
+    font-family:inherit;
+    font-size:.92rem;
 
     outline:none;
 
-    box-shadow:
-        var(--shadow);
+    box-shadow:var(--shadow);
+
+    transition:.2s ease;
 }
 
 .search:focus{
-
-    border-color:
-        var(--primary);
+    border-color:var(--primary);
 
     box-shadow:
-        0 0 0 3px
-        rgba(37,99,235,.12);
-}
-
-.faq-count{
-
-    color:var(--muted);
-
-    font-size:.82rem;
-
-    margin-bottom:15px;
+        0 0 0 3px var(--primary-soft);
 }
 
 .faq{
+    margin-top:15px;
 
-    background:
-        var(--surface);
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
 
-    border:
-        1px solid
-        var(--border);
+details{
+    background:var(--surface);
 
-    border-radius:
-        12px;
+    border:1px solid var(--border);
 
-    margin-bottom:
-        10px;
+    border-radius:12px;
+
+    box-shadow:var(--shadow);
 
     overflow:hidden;
 
-    transition:.2s;
+    transition:.2s ease;
 }
 
-.faq summary{
+details:hover{
+    border-color:var(--primary);
+}
 
+summary{
     cursor:pointer;
+
+    padding:16px 17px;
+
+    font-size:.9rem;
+    font-weight:700;
 
     list-style:none;
 
-    padding:
-        17px 18px;
-
-    font-weight:700;
-
     display:flex;
-
     justify-content:space-between;
-
     gap:15px;
+
+    user-select:none;
 }
 
-.faq summary::-webkit-details-marker{
+summary::-webkit-details-marker{
     display:none;
 }
 
-.faq summary::after{
+summary::after{
     content:"+";
 
-    color:
-        var(--primary);
+    color:var(--primary);
 
-    font-size:1.3rem;
+    font-size:1.2rem;
+    font-weight:500;
 }
 
-.faq[open] summary::after{
+details[open] summary::after{
     content:"−";
 }
 
-.faq-answer{
+.faq-content{
+    padding:0 17px 17px;
 
-    padding:
-        0 18px 18px;
+    color:var(--muted);
 
-    color:
-        var(--muted);
+    font-size:.86rem;
 
-    font-size:.9rem;
+    animation:faqOpen .25s ease;
 }
 
+@keyframes faqOpen{
+    from{
+        opacity:0;
+        transform:translateY(-4px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
 
 /* =========================================================
    REVIEW
 ========================================================= */
 
 .review{
+    margin-top:48px;
 
-    margin-top:60px;
+    padding:30px;
 
-    padding:
-        35px;
+    border-radius:18px;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary-soft),
+        var(--surface)
+    );
+
+    border:1px solid var(--border);
 
     text-align:center;
-
-    border-radius:
-        18px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #f5f3ff,
-            #eef2ff
-        );
-
-    border:
-        1px solid
-        #ddd6fe;
-}
-
-[data-theme="dark"] .review{
-
-    background:
-        linear-gradient(
-            135deg,
-            #241d3b,
-            #1e293b
-        );
-
-    border-color:
-        #40366a;
 }
 
 .review h2{
-
-    font-size:
-        1.6rem;
-
-    margin-bottom:
-        8px;
+    margin:0 0 8px;
+    font-size:1.4rem;
 }
 
 .review p{
-
-    color:
-        var(--muted);
-
-    margin-bottom:
-        20px;
+    margin:0 0 20px;
+    color:var(--muted);
 }
 
-.review-btn{
-
+.review-button{
     display:inline-flex;
+    align-items:center;
+    justify-content:center;
 
-    padding:
-        12px 20px;
+    padding:12px 20px;
 
-    background:
-        var(--purple);
+    border-radius:10px;
 
+    background:var(--primary);
     color:white;
 
     text-decoration:none;
 
-    border-radius:
-        10px;
-
     font-weight:700;
 
-    transition:.2s;
+    transition:.18s ease;
 }
 
-.review-btn:hover{
-
-    transform:
-        translateY(-3px);
-
-    box-shadow:
-        0 8px 20px
-        rgba(124,58,237,.25);
+.review-button:hover{
+    transform:translateY(-2px);
 }
 
+.review-button:active{
+    transform:scale(.96);
+}
 
 /* =========================================================
    FOOTER
 ========================================================= */
 
-footer{
-
-    margin-top:
-        50px;
-
-    padding-top:
-        25px;
-
-    border-top:
-        1px solid
-        var(--border);
-
+.footer{
     text-align:center;
 
-    color:
-        var(--muted);
+    margin-top:45px;
 
-    font-size:.85rem;
+    padding-top:25px;
+
+    border-top:1px solid var(--border);
+
+    color:var(--muted);
+
+    font-size:.82rem;
 }
 
-.heart{
-
-    color:
-        #ef4444;
-
-    display:inline-block;
-
-    animation:
-        heartbeat 1.5s infinite;
+.footer strong{
+    color:var(--text);
 }
-
-@keyframes heartbeat{
-
-    0%,100%{
-        transform:scale(1);
-    }
-
-    50%{
-        transform:scale(1.18);
-    }
-}
-
 
 /* =========================================================
-   BACK TO TOP
+   FLOATING SHARE
 ========================================================= */
 
-.top{
-
+.share{
     position:fixed;
 
     right:22px;
     bottom:22px;
 
-    width:44px;
-    height:44px;
+    z-index:100;
+
+    border:1px solid var(--primary);
+
+    background:var(--primary);
+    color:white;
+
+    padding:12px 17px;
 
     border-radius:12px;
 
-    border:
-        1px solid
-        var(--border);
+    font-family:inherit;
 
-    background:
-        var(--surface);
-
-    color:
-        var(--text);
+    font-weight:700;
+    font-size:.85rem;
 
     cursor:pointer;
 
     box-shadow:
-        var(--shadow);
+        0 8px 25px rgba(21,94,239,.25);
 
-    opacity:0;
-
-    pointer-events:none;
-
-    transform:
-        translateY(10px);
-
-    transition:.25s;
-
-    z-index:900;
+    transition:
+        transform .16s ease,
+        box-shadow .16s ease;
 }
 
-.top.show{
-
-    opacity:1;
-
-    pointer-events:auto;
-
-    transform:
-        translateY(0);
+.share:hover{
+    transform:translateY(-3px);
+    box-shadow:
+        0 12px 30px rgba(21,94,239,.32);
 }
 
-.top:hover{
-
-    background:
-        var(--primary);
-
-    color:white;
+.share:active{
+    transform:scale(.93);
 }
-
 
 /* =========================================================
-   MOBILE NAV
-========================================================= */
-
-.mobile-nav{
-
-    display:none;
-}
-
-
-/* =========================================================
-   ANIMATION
+   SCROLL ANIMATION
 ========================================================= */
 
 .reveal{
-
     opacity:0;
-
-    transform:
-        translateY(25px);
+    transform:translateY(22px);
 
     transition:
         opacity .6s ease,
-        transform .6s ease;
+        transform .6s cubic-bezier(.2,.7,.2,1);
 }
 
 .reveal.show{
-
     opacity:1;
-
-    transform:
-        translateY(0);
+    transform:translateY(0);
 }
 
-
 /* =========================================================
-   TABLET
+   RESPONSIVE
 ========================================================= */
 
-@media(max-width:850px){
+@media(max-width:800px){
 
-    .quick-grid{
-
-        grid-template-columns:
-            repeat(2,1fr);
+    .resource-grid{
+        grid-template-columns:1fr;
     }
 
-    .nav-links a:nth-child(n+4){
-
-        display:none;
-    }
-
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media(max-width:650px){
-
-    body{
-
-        font-size:
-            15px;
-
-        padding-bottom:
-            70px;
-    }
-
-    .nav-inner{
-
-        padding:
-            10px 15px;
-    }
-
-    .brand span{
-
-        display:none;
-    }
-
-    .brand-logo{
-
-        width:38px;
-        height:38px;
-    }
-
-    .nav-links{
-
-        display:none;
+    .grid{
+        grid-template-columns:1fr;
     }
 
     .hero{
+        padding:42px 25px 30px;
+    }
+}
 
-        margin:
-            15px 10px 20px;
+@media(max-width:600px){
 
-        padding:
-            35px 22px;
+    .page{
+        width:min(100% - 18px,1050px);
+        margin:10px auto 65px;
+    }
 
-        border-radius:
-            20px;
+    .hero{
+        border-radius:17px;
+        padding:78px 20px 25px;
     }
 
     .hero h1{
-
-        font-size:
-            2.35rem;
+        font-size:2.15rem;
+        letter-spacing:-1px;
     }
 
     .hero p{
-
-        font-size:
-            .95rem;
+        font-size:.9rem;
     }
 
-    .hero-buttons{
-
-        flex-direction:
-            column;
+    .hero-actions{
+        flex-direction:column;
     }
 
-    .hero-btn{
-
+    .hero-button{
         width:100%;
     }
 
-    .container{
-
-        padding:
-            0 15px 40px;
-    }
-
-    .section-heading{
-
-        margin-top:
-            35px;
-
-        align-items:
-            flex-start;
-
-        flex-direction:
-            column;
-
-        gap:4px;
-    }
-
-    .section-heading h2{
-
-        font-size:
-            1.35rem;
-    }
-
-    .quick-grid{
-
-        grid-template-columns:
-            1fr 1fr;
-
-        gap:10px;
-    }
-
-    .quick-card{
-
-        padding:
-            16px;
-
-        border-radius:
-            13px;
-    }
-
-    .quick-icon{
-
-        width:40px;
-        height:40px;
-
-        margin-bottom:
-            12px;
-    }
-
-    .quick-card h3{
-
-        font-size:
-            .88rem;
-    }
-
-    .quick-card p{
-
-        font-size:
-            .76rem;
-    }
-
-    .grid,
-    .academic-grid{
-
-        grid-template-columns:
-            1fr;
-
-        gap:14px;
+    .theme-button{
+        top:15px;
+        right:15px;
     }
 
     .section{
-
-        margin-top:
-            42px;
+        margin-top:38px;
     }
 
-    .section-title h2{
-
-        font-size:
-            1.3rem;
-    }
-
-    .section-title-icon{
-
-        width:38px;
-        height:38px;
+    .section-heading{
+        align-items:flex-start;
+        flex-direction:column;
     }
 
     .card{
-
-        padding:
-            18px;
-
-        border-radius:
-            14px;
+        padding:18px;
+        border-radius:13px;
     }
 
-    .academic-card{
-
-        padding:
-            23px;
-
-        border-radius:
-            15px;
+    .resource-card{
+        padding:18px;
     }
 
-    .academic-card h3{
-
-        font-size:
-            1.2rem;
+    .section-title h2{
+        font-size:1.15rem;
     }
 
     .review{
-
-        padding:
-            28px 20px;
+        padding:25px 18px;
     }
 
-    .review h2{
-
-        font-size:
-            1.4rem;
-    }
-
-    .mobile-nav{
-
-        position:fixed;
-
-        display:flex;
-
-        bottom:0;
-        left:0;
-
-        width:100%;
-
-        height:62px;
-
-        background:
-            rgba(255,255,255,.96);
-
-        backdrop-filter:
-            blur(12px);
-
-        border-top:
-            1px solid
-            var(--border);
-
-        z-index:1000;
-
-        justify-content:
-            space-around;
-    }
-
-    [data-theme="dark"] .mobile-nav{
-
-        background:
-            rgba(15,23,42,.96);
-    }
-
-    .mobile-nav a{
-
-        flex:1;
-
-        display:flex;
-
-        flex-direction:
-            column;
-
-        align-items:center;
-
-        justify-content:center;
-
-        gap:2px;
-
-        text-decoration:none;
-
-        color:
-            var(--muted);
-
-        font-size:
-            .65rem;
-
-        font-weight:700;
-    }
-
-    .mobile-nav a:first-child{
-
-        color:
-            var(--primary);
-    }
-
-    .mobile-nav-icon{
-
-        font-size:
-            1.15rem;
-    }
-
-    .top{
-
+    .share{
         right:15px;
-
-        bottom:78px;
+        bottom:15px;
     }
-
 }
 
-
-/* =========================================================
-   REDUCED MOTION
-========================================================= */
+/* Respect reduced-motion settings */
 
 @media(prefers-reduced-motion:reduce){
 
     *,
     *::before,
     *::after{
-
-        animation-duration:
-            .01ms !important;
-
-        animation-iteration-count:
-            1 !important;
-
-        scroll-behavior:
-            auto !important;
-
-        transition-duration:
-            .01ms !important;
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+        scroll-behavior:auto !important;
+        transition-duration:.01ms !important;
     }
+
 }
 
 </style>
 </head>
 
-
 <body>
 
-<!-- Progress -->
-<div class="progress" id="progress"></div>
+<div class="page">
 
-
-<!-- =========================================================
-     NAVBAR
-========================================================= -->
-
-<nav class="navbar">
-
-    <div class="nav-inner">
-
-        <a href="#" class="brand">
-
-            <div class="brand-logo">
-                GK
-            </div>
-
-            <span>
-                GKDU Fresher's Guide
-            </span>
-
-        </a>
-
-
-        <div class="nav-links">
-
-            <a href="#academic">
-                Academic
-            </a>
-
-            <a href="#campus">
-                Campus
-            </a>
-
-            <a href="#community">
-                Community
-            </a>
-
-            <a href="#faq">
-                FAQ
-            </a>
-
-        </div>
-
-
-        <button
-            class="theme-btn"
-            id="themeBtn"
-            onclick="toggleTheme()"
-            aria-label="Toggle dark mode">
-
-            🌙
-
-        </button>
-
-    </div>
-
-</nav>
-
-
-
-<!-- =========================================================
+<!-- ======================================================
      HERO
-========================================================= -->
+======================================================= -->
 
 <header class="hero">
+
+    <button
+        class="theme-button"
+        id="themeButton"
+        aria-label="Toggle dark mode">
+        🌙 Dark
+    </button>
 
     <div class="hero-content">
 
         <div class="badge">
-            🎓 Student Resource Portal
+            🎓 GKDU • STUDENT RESOURCE
         </div>
 
         <h1>
-            Gurukul Kangri
+            Gurukul Kangri<br>
+            Fresher's Guide
         </h1>
 
         <p>
-            The unofficial fresher's guide for GKDU students.
-            Find your syllabus, previous-year papers, college
-            resources, hostel information and student communities
-            in one place.
+            A simple, unofficial resource hub for GKDU students —
+            academics, PYQs, campus resources, student communities
+            and everything you need to get started.
         </p>
 
-
-        <div class="hero-buttons">
+        <div class="hero-actions">
 
             <a
-                href="#academic"
-                class="hero-btn primary">
-
+                href="#academics"
+                class="hero-button">
                 📚 Academic Resources
-
             </a>
 
             <a
-                href="#faq"
-                class="hero-btn secondary">
-
-                💬 Fresher FAQ
-
+                href="#community"
+                class="hero-button secondary">
+                👥 Student Community
             </a>
 
         </div>
@@ -1864,301 +1041,140 @@ footer{
 </header>
 
 
+<!-- ======================================================
+     IMPORTANT ACADEMIC RESOURCES
+======================================================= -->
 
-<main class="container">
-
-
-<!-- =========================================================
-     QUICK ACCESS
-========================================================= -->
-
-<section class="reveal">
+<section class="important reveal" id="academics">
 
     <div class="section-heading">
 
         <div>
-
-            <h2>
-                Important Resources
-            </h2>
-
-            <p>
-                The links you'll probably use most.
-            </p>
-
+            <h2>Important Academic Resources</h2>
+            <p>Keep these saved — you'll use them throughout your degree.</p>
         </div>
 
     </div>
 
-
-    <div class="quick-grid">
-
-
-        <a
-            href="https://share.google/xPlRQjw33ZTzi8Luz"
-            target="_blank"
-            rel="noopener"
-            class="quick-card">
-
-            <div class="quick-icon icon-blue">
-                📘
-            </div>
-
-            <h3>
-                Engineering Syllabus
-            </h3>
-
-            <p>
-                FET / GKV syllabus
-            </p>
-
-        </a>
-
-
-        <a
-            href="https://drive.google.com/file/d/1i3-EHFAaQYN_oHtBrWrphLu3oNjeRD2i/view?usp=drivesdk"
-            target="_blank"
-            rel="noopener"
-            class="quick-card">
-
-            <div class="quick-icon icon-green">
-                📝
-            </div>
-
-            <h3>
-                2025 PYQs
-            </h3>
-
-            <p>
-                Previous year papers
-            </p>
-
-        </a>
-
-
-        <a
-            href="#college"
-            class="quick-card">
-
-            <div class="quick-icon icon-purple">
-                🏛️
-            </div>
-
-            <h3>
-                College Portals
-            </h3>
-
-            <p>
-                University services
-            </p>
-
-        </a>
-
-
-        <a
-            href="#faq"
-            class="quick-card">
-
-            <div class="quick-icon icon-yellow">
-                💬
-            </div>
-
-            <h3>
-                Fresher FAQ
-            </h3>
-
-            <p>
-                Common questions
-            </p>
-
-        </a>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     ACADEMIC
-========================================================= -->
-
-<section
-    class="section reveal"
-    id="academic">
-
-    <div class="section-title">
-
-        <div class="section-title-icon">
-            🎓
-        </div>
-
-        <div>
-
-            <h2>
-                Academic Resources
-            </h2>
-
-            <small>
-                Syllabus, PYQs and study material
-            </small>
-
-        </div>
-
-    </div>
-
-
-    <div class="academic-grid">
-
+    <div class="resource-grid">
 
         <!-- SYLLABUS -->
 
-        <article class="academic-card blue">
+        <a
+            class="resource-card"
+            href="https://share.google/xPlRQjw33ZTzi8Luz"
+            target="_blank"
+            rel="noopener noreferrer">
 
-            <div class="emoji">
+            <div class="resource-icon">
                 📘
             </div>
 
-            <h3>
-                Engineering Syllabus
-            </h3>
+            <h3>FET GKV Syllabus</h3>
 
             <p>
-                Access the FET / GKV engineering syllabus
-                and check your subjects and units.
+                Engineering syllabus and curriculum reference.
             </p>
 
-            <a
-                href="https://share.google/xPlRQjw33ZTzi8Luz"
-                target="_blank"
-                rel="noopener"
-                class="white-btn">
+            <span class="arrow">↗</span>
 
-                Open Syllabus ↗
-
-            </a>
-
-        </article>
+        </a>
 
 
-        <!-- PYQ -->
+        <!-- 2025 PYQ -->
 
-        <article class="academic-card green">
+        <a
+            class="resource-card"
+            href="https://drive.google.com/file/d/1i3-EHFAaQYN_oHtBrWrphLu3oNjeRD2i/view?usp=drivesdk"
+            target="_blank"
+            rel="noopener noreferrer">
 
-            <div class="emoji">
+            <div class="resource-icon">
                 📝
             </div>
 
-            <h3>
-                2025 PYQs
-            </h3>
+            <h3>2025 PYQ</h3>
 
             <p>
-                Access the 2025 previous-year question
-                paper collection for engineering students.
+                Previous year question papers from 2025.
             </p>
 
-            <a
-                href="https://drive.google.com/file/d/1i3-EHFAaQYN_oHtBrWrphLu3oNjeRD2i/view?usp=drivesdk"
-                target="_blank"
-                rel="noopener"
-                class="white-btn">
+            <span class="arrow">↗</span>
 
-                Open 2025 PYQs ↗
-
-            </a>
-
-        </article>
+        </a>
 
 
-    </div>
+        <!-- OLD PYQ -->
 
+        <a
+            class="resource-card"
+            href="https://share.google/G90iNCkTZpMHpG3pT"
+            target="_blank"
+            rel="noopener noreferrer">
 
-    <div class="info">
+            <div class="resource-icon">
+                📚
+            </div>
 
-        💡
+            <h3>2024 & Older PYQs</h3>
 
-        <span>
-            <strong>Study tip:</strong>
-            Check the syllabus first, then use PYQs to
-            identify important topics and understand the
-            question pattern.
-        </span>
+            <p>
+                FET previous papers from 2024 and earlier years.
+            </p>
+
+            <span class="arrow">↗</span>
+
+        </a>
 
     </div>
 
 </section>
 
 
+<!-- ======================================================
+     PORTALS
+======================================================= -->
 
-<!-- =========================================================
-     COLLEGE
-========================================================= -->
-
-<section
-    class="section reveal"
-    id="college">
+<section class="section reveal">
 
     <div class="section-title">
-
-        <div class="section-title-icon">
-            🏛️
-        </div>
-
-        <div>
-
-            <h2>
-                College Portals
-            </h2>
-
-            <small>
-                University websites and student services
-            </small>
-
-        </div>
-
+        <div class="number">01</div>
+        <h2>College Portals & Services</h2>
     </div>
-
 
     <div class="grid">
 
-
         <div class="card">
 
-            <div class="card-header">
-
-                <h3>
-                    General Portals
-                </h3>
-
-                <span class="card-label">
-                    IMPORTANT
-                </span>
-
-            </div>
+            <h3>🌐 General Portals</h3>
 
             <div class="buttons">
 
                 <a
                     href="https://share.google/vnUCMSDR4Nt3ovtIa"
                     target="_blank"
-                    rel="noopener"
-                    class="btn btn-main">
+                    rel="noopener noreferrer"
+                    class="btn primary">
 
-                    Main Website
-                    <span>↗</span>
+                    <span class="btn-left">
+                        🌐 Main Website
+                    </span>
+
+                    <span class="btn-arrow">↗</span>
 
                 </a>
 
                 <a
                     href="https://share.google/mQrSIhndp8oXtUgdC"
                     target="_blank"
-                    rel="noopener"
+                    rel="noopener noreferrer"
                     class="btn">
 
-                    Alternate Portal
-                    <span>↗</span>
+                    <span class="btn-left">
+                        🔐 Alternate Portal
+                    </span>
+
+                    <span class="btn-arrow">↗</span>
 
                 </a>
 
@@ -2169,35 +1185,35 @@ footer{
 
         <div class="card">
 
-            <div class="card-header">
-
-                <h3>
-                    Student Services
-                </h3>
-
-            </div>
+            <h3>🎓 Student Services</h3>
 
             <div class="buttons">
 
                 <a
                     href="https://share.google/f4ZzQM094yr221HPa"
                     target="_blank"
-                    rel="noopener"
+                    rel="noopener noreferrer"
                     class="btn">
 
-                    Download Fee Receipt
-                    <span>↗</span>
+                    <span class="btn-left">
+                        🧾 Fee Receipt
+                    </span>
+
+                    <span class="btn-arrow">↗</span>
 
                 </a>
 
                 <a
                     href="https://share.google/dKpY3ByxepoVHzmUV"
                     target="_blank"
-                    rel="noopener"
+                    rel="noopener noreferrer"
                     class="btn">
 
-                    Check Results
-                    <span>↗</span>
+                    <span class="btn-left">
+                        📊 Check Results
+                    </span>
+
+                    <span class="btn-arrow">↗</span>
 
                 </a>
 
@@ -2205,76 +1221,61 @@ footer{
 
         </div>
 
-
     </div>
 
 </section>
 
 
-
-<!-- =========================================================
+<!-- ======================================================
      COMMUNITY
-========================================================= -->
+======================================================= -->
 
 <section
     class="section reveal"
     id="community">
 
     <div class="section-title">
-
-        <div class="section-title-icon">
-            📱
-        </div>
-
-        <div>
-
-            <h2>
-                Campus Community
-            </h2>
-
-            <small>
-                Connect with fellow students
-            </small>
-
-        </div>
-
+        <div class="number">02</div>
+        <h2>Campus Community</h2>
     </div>
-
 
     <div class="grid">
 
-
         <div class="card">
 
-            <div class="card-header">
+            <h3>💬 Discussion Groups</h3>
 
-                <h3>
-                    Discussion Groups
-                </h3>
-
-            </div>
+            <p class="card-description">
+                Connect with fellow students and freshers.
+            </p>
 
             <div class="buttons">
 
                 <a
                     href="https://ig.me/j/AbYV1fHlJ03KWBBm/"
                     target="_blank"
-                    rel="noopener"
+                    rel="noopener noreferrer"
                     class="btn">
 
-                    👨🏽 Boys Discussion
-                    <span>↗</span>
+                    <span class="btn-left">
+                        👨‍🎓 Boys Discussion
+                    </span>
+
+                    <span class="btn-arrow">↗</span>
 
                 </a>
 
                 <a
                     href="https://ig.me/j/AbYq82f0ZOMoNNI3/"
                     target="_blank"
-                    rel="noopener"
+                    rel="noopener noreferrer"
                     class="btn">
 
-                    👩🏽 Girls Discussion
-                    <span>↗</span>
+                    <span class="btn-left">
+                        👩‍🎓 Girls Discussion
+                    </span>
+
+                    <span class="btn-arrow">↗</span>
 
                 </a>
 
@@ -2285,45 +1286,50 @@ footer{
 
         <div class="card">
 
-            <div class="card-header">
+            <h3>📱 Instagram Directory</h3>
 
-                <h3>
-                    Instagram Directory
-                </h3>
-
-            </div>
-
-            <div class="buttons">
+            <div class="social-list">
 
                 <a
-                    href="https://www.instagram.com/gkv_hdr"
+                    href="https://www.instagram.com/gkv_hdr?igsh=MTk0ZGprc3I2dWtrYQ=="
                     target="_blank"
-                    rel="noopener"
-                    class="btn">
+                    rel="noopener noreferrer"
+                    class="social">
 
-                    Official GKV Page
+                    <span>Official GKV Page</span>
                     <span>↗</span>
 
                 </a>
 
                 <a
-                    href="https://www.instagram.com/gkviians"
+                    href="https://www.instagram.com/gkviians?igsh=MjJjemZsaGZ3MzN5"
                     target="_blank"
-                    rel="noopener"
-                    class="btn">
+                    rel="noopener noreferrer"
+                    class="social">
 
-                    @gkviians
+                    <span>@gkviians • Memes</span>
                     <span>↗</span>
 
                 </a>
 
                 <a
-                    href="https://www.instagram.com/lekhram_diaries"
+                    href="https://www.instagram.com/na_samaz_bandar?igsh=MTh4bngxaTRzcnc5YQ=="
                     target="_blank"
-                    rel="noopener"
-                    class="btn">
+                    rel="noopener noreferrer"
+                    class="social">
 
-                    @lekhram_diaries
+                    <span>@na_samaz_bandar</span>
+                    <span>↗</span>
+
+                </a>
+
+                <a
+                    href="https://www.instagram.com/lekhram_diaries?igsh=cGI0amozZXNzb3Ru"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social">
+
+                    <span>@lekhram_diaries</span>
                     <span>↗</span>
 
                 </a>
@@ -2331,67 +1337,56 @@ footer{
             </div>
 
         </div>
-
 
     </div>
 
 </section>
 
 
+<!-- ======================================================
+     ACADEMIC PAPERS
+======================================================= -->
 
-<!-- =========================================================
-     STUDY MATERIAL
-========================================================= -->
-
-<section
-    class="section reveal">
+<section class="section reveal">
 
     <div class="section-title">
-
-        <div class="section-title-icon">
-            📚
-        </div>
-
-        <div>
-
-            <h2>
-                Study Material
-            </h2>
-
-            <small>
-                Notes and previous papers
-            </small>
-
-        </div>
-
+        <div class="number">03</div>
+        <h2>Academic Papers</h2>
     </div>
 
-
     <div class="card">
+
+        <h3>📚 Previous Year Papers</h3>
+
+        <p class="card-description">
+            Practice previous papers to understand question patterns
+            and prepare for semester examinations.
+        </p>
 
         <div class="buttons">
 
             <a
                 href="https://drive.google.com/drive/mobile/folders/1nVBWVYDDvre_38XRq506y6ii7-zo_XT6"
                 target="_blank"
-                rel="noopener"
-                class="btn btn-main">
-
-                📚 Download All Papers
-                <span>↗</span>
-
-            </a>
-
-            <a
-                href="https://share.google/G90iNCkTZpMHpG3pT"
-                target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
                 class="btn">
 
-                📝 FET Previous Papers
-                <span>↗</span>
+                <span class="btn-left">
+                    📂 All Available Papers
+                </span>
+
+                <span class="btn-arrow">↗</span>
 
             </a>
+
+        </div>
+
+        <div class="tip">
+
+            <strong>💡 Study Tip</strong>
+
+            Don't just collect PYQs. Solve them under a time limit
+            and identify repeated concepts before examinations.
 
         </div>
 
@@ -2400,343 +1395,228 @@ footer{
 </section>
 
 
+<!-- ======================================================
+     CAMPUS & HOSTEL
+======================================================= -->
 
-<!-- =========================================================
-     CAMPUS
-========================================================= -->
-
-<section
-    class="section reveal"
-    id="campus">
+<section class="section reveal">
 
     <div class="section-title">
-
-        <div class="section-title-icon">
-            🏢
-        </div>
-
-        <div>
-
-            <h2>
-                Campus & Hostel
-            </h2>
-
-            <small>
-                Explore campus and accommodation
-            </small>
-
-        </div>
-
+        <div class="number">04</div>
+        <h2>Campus & Hostel</h2>
     </div>
 
+    <div class="card">
 
-    <div class="grid">
+        <h3>🏫 Explore GKDU</h3>
 
-
-        <div class="card">
-
-            <div class="card-header">
-
-                <h3>
-                    📸 Hostel
-                </h3>
-
-            </div>
+        <div class="buttons">
 
             <a
                 href="https://maps.app.goo.gl/mDGiPte6tJTpeBtB7"
                 target="_blank"
-                rel="noopener"
-                class="btn btn-main">
+                rel="noopener noreferrer"
+                class="btn">
 
-                View Hostel Images
-                <span>↗</span>
+                <span class="btn-left">
+                    🏠 Hostel Images
+                </span>
+
+                <span class="btn-arrow">↗</span>
 
             </a>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="card-header">
-
-                <h3>
-                    📸 Campus
-                </h3>
-
-            </div>
 
             <a
                 href="https://maps.app.goo.gl/F7QrGuoJQ2ATgpur8"
                 target="_blank"
-                rel="noopener"
-                class="btn btn-main">
+                rel="noopener noreferrer"
+                class="btn">
 
-                View Campus Images
-                <span>↗</span>
+                <span class="btn-left">
+                    🏛️ Campus Images
+                </span>
+
+                <span class="btn-arrow">↗</span>
 
             </a>
 
         </div>
 
+        <div class="tip">
 
-    </div>
+            <strong>💡 Fresher Tip</strong>
 
+            Hostel facilities can vary. Keep basic personal
+            essentials and study supplies with you.
 
-    <div class="info">
-
-        💡
-
-        <span>
-            Keep basic personal essentials and supplies with
-            you. Hostel facilities can vary, so being prepared
-            makes student life easier.
-        </span>
+        </div>
 
     </div>
 
 </section>
 
 
-
-<!-- =========================================================
+<!-- ======================================================
      FAQ
-========================================================= -->
+======================================================= -->
 
-<section
-    class="section reveal"
-    id="faq">
+<section class="section reveal">
 
     <div class="section-title">
-
-        <div class="section-title-icon">
-            💬
-        </div>
-
-        <div>
-
-            <h2>
-                Fresher FAQ
-            </h2>
-
-            <small>
-                Quick answers to common questions
-            </small>
-
-        </div>
-
+        <div class="number">05</div>
+        <h2>Fresher FAQs</h2>
     </div>
 
-
-    <div class="search-wrapper">
-
-        <span class="search-icon">
-            🔍
-        </span>
-
-        <input
-            type="search"
-            id="faqSearch"
-            class="search"
-            placeholder="Search FAQs..."
-            oninput="filterFAQs()">
-
-    </div>
-
+    <input
+        type="search"
+        id="faqSearch"
+        class="search"
+        placeholder="🔍 Search FAQs..."
+        aria-label="Search frequently asked questions">
 
     <div
-        id="faqCount"
-        class="faq-count">
+        class="faq"
+        id="faqContainer">
 
-        Showing all FAQs
-
-    </div>
-
-
-    <div id="faqList">
-
-
-        <details class="faq">
+        <details class="faq-item">
 
             <summary>
-                Are laptops mandatory for 1st year?
+                Are laptops mandatory for first year?
             </summary>
 
-            <div class="faq-answer">
+            <div class="faq-content">
 
-                A laptop can be useful for coding assignments,
-                projects and academic work. A decent
-                mid-range laptop should be enough for most
-                introductory engineering work.
+                Not necessarily from day one, but a laptop can be
+                useful for programming assignments, projects,
+                presentations and academic work.
 
             </div>
 
         </details>
 
 
-        <details class="faq">
+        <details class="faq-item">
 
             <summary>
-                Is a hostel room guaranteed for freshers?
+                Is hostel accommodation guaranteed?
             </summary>
 
-            <div class="faq-answer">
+            <div class="faq-content">
 
-                Hostel availability depends on the university's
-                allotment process and available seats. Check
-                the latest instructions and apply as early as
-                possible.
+                Hostel accommodation depends on availability and
+                the university's allotment process. Students should
+                apply as early as possible.
 
             </div>
 
         </details>
 
 
-        <details class="faq">
+        <details class="faq-item">
 
             <summary>
                 How are the hostel facilities?
             </summary>
 
-            <div class="faq-answer">
+            <div class="faq-content">
 
-                Hostel facilities are generally basic.
-                Students should keep their personal essentials
-                and supplies ready.
+                Hostel facilities are generally basic. Freshers
+                should be prepared for a simple residential setup
+                and should keep their essential personal items.
 
             </div>
 
         </details>
 
 
-        <details class="faq">
+        <details class="faq-item">
 
             <summary>
-                How are the classrooms and practical labs?
+                How are the engineering labs?
             </summary>
 
-            <div class="faq-answer">
+            <div class="faq-content">
 
-                Engineering classrooms and laboratories provide
-                facilities required for regular academic work.
-                Facilities can vary between departments.
+                Engineering labs provide the facilities required
+                for regular academic practical work. The experience
+                can vary depending on the department and laboratory.
 
             </div>
 
         </details>
 
 
-        <details class="faq">
+        <details class="faq-item">
 
             <summary>
-                How are the professors and teaching staff?
+                How are the professors?
             </summary>
 
-            <div class="faq-answer">
+            <div class="faq-content">
 
-                Faculty members can help students with academic
-                questions and subject-related guidance. Make
-                use of faculty interaction and department
-                resources.
+                Faculty members can be approached for academic
+                guidance, assignments and doubts. Students are
+                encouraged to interact with their department faculty.
 
             </div>
 
         </details>
 
 
-        <details class="faq">
+        <details class="faq-item">
 
             <summary>
-                What is the status of the university?
+                What is the university's status?
             </summary>
 
-            <div class="faq-answer">
+            <div class="faq-content">
 
-                Gurukul Kangri is a
-                <strong>Deemed-to-be University</strong>.
+                Gurukul Kangri is a Deemed-to-be University.
 
             </div>
 
         </details>
 
 
-        <details class="faq">
+        <details class="faq-item">
 
             <summary>
                 Is there a dress code?
             </summary>
 
-            <div class="faq-answer">
+            <div class="faq-content">
 
-                Gurukul Kangri has a traditional academic
-                environment. Students should follow the
-                university's current dress and conduct
-                guidelines.
-
-            </div>
-
-        </details>
-
-
-        <details class="faq">
-
-            <summary>
-                Where can I find the engineering syllabus?
-            </summary>
-
-            <div class="faq-answer">
-
-                Use the Engineering Syllabus section above
-                or the Important Resources section at the
-                top of the page.
+                Students should follow university rules regarding
+                appropriate clothing, particularly during formal
+                academic activities and events.
 
             </div>
 
         </details>
-
-
-        <details class="faq">
-
-            <summary>
-                Where can I find the 2025 PYQs?
-            </summary>
-
-            <div class="faq-answer">
-
-                The 2025 Previous Year Questions are available
-                in the dedicated 2025 PYQ section above.
-
-            </div>
-
-        </details>
-
 
     </div>
 
 </section>
 
 
-
-<!-- =========================================================
+<!-- ======================================================
      REVIEW
-========================================================= -->
+======================================================= -->
 
 <section class="review reveal">
 
-    <h2>
-        ⭐ Help Future Freshers
-    </h2>
+    <h2>Help Future Freshers</h2>
 
     <p>
-        Share your experience and help the next batch.
+        Had a useful experience or discovered something every
+        fresher should know? Share it with the next batch.
     </p>
 
     <a
         href="https://forms.gle/s2w2vbcMQtyx6h8x5"
         target="_blank"
-        rel="noopener"
-        class="review-btn">
+        rel="noopener noreferrer"
+        class="review-button">
 
         ✍️ Submit a Review
 
@@ -2745,107 +1625,37 @@ footer{
 </section>
 
 
-
-<!-- =========================================================
+<!-- ======================================================
      FOOTER
-========================================================= -->
+======================================================= -->
 
-<footer>
+<footer class="footer">
 
     <p>
-        Made with
-        <span class="heart">♥</span>
-        for GKDU students
+        <strong>GKDU Fresher's Guide</strong>
+        · Unofficial Student Resource
     </p>
 
     <p>
-        Unofficial student resource •
-        Not affiliated with Gurukul Kangri University
+        Crafted for the GKDU student community ❤️
     </p>
 
 </footer>
 
-
-</main>
-
+</div>
 
 
-<!-- =========================================================
-     MOBILE BOTTOM NAV
-========================================================= -->
-
-<nav class="mobile-nav">
-
-    <a href="#">
-
-        <span class="mobile-nav-icon">
-            🏠
-        </span>
-
-        Home
-
-    </a>
-
-
-    <a href="#academic">
-
-        <span class="mobile-nav-icon">
-            📚
-        </span>
-
-        Academic
-
-    </a>
-
-
-    <a href="#community">
-
-        <span class="mobile-nav-icon">
-            👥
-        </span>
-
-        Community
-
-    </a>
-
-
-    <a href="#campus">
-
-        <span class="mobile-nav-icon">
-            🏫
-        </span>
-
-        Campus
-
-    </a>
-
-
-    <a href="#faq">
-
-        <span class="mobile-nav-icon">
-            💬
-        </span>
-
-        FAQ
-
-    </a>
-
-</nav>
-
-
-
-<!-- Back to top -->
+<!-- ======================================================
+     SINGLE SHARE BUTTON
+======================================================= -->
 
 <button
-    class="top"
-    id="topBtn"
-    onclick="scrollToTop()"
-    aria-label="Back to top">
+    class="share"
+    id="shareButton">
 
-    ↑
+    📢 Share Guide
 
 </button>
-
 
 
 <script>
@@ -2854,304 +1664,253 @@ footer{
    THEME
 ========================================================= */
 
-const themeBtn =
-    document.getElementById("themeBtn");
+const root = document.documentElement;
+const themeButton = document.getElementById("themeButton");
 
-function updateThemeIcon(){
+function updateThemeButton(){
 
     const dark =
-        document.documentElement
-        .getAttribute("data-theme")
-        === "dark";
+        root.getAttribute("data-theme") === "dark";
 
-    themeBtn.textContent =
-        dark ? "☀️" : "🌙";
+    themeButton.textContent =
+        dark ? "☀️ Light" : "🌙 Dark";
 }
 
-function toggleTheme(){
+function setTheme(theme){
 
-    const html =
-        document.documentElement;
-
-    if(
-        html.getAttribute("data-theme")
-        === "dark"
-    ){
-
-        html.removeAttribute("data-theme");
-
-        localStorage.setItem(
-            "gkdu-theme",
-            "light"
-        );
-
+    if(theme === "dark"){
+        root.setAttribute("data-theme","dark");
     }else{
-
-        html.setAttribute(
-            "data-theme",
-            "dark"
-        );
-
-        localStorage.setItem(
-            "gkdu-theme",
-            "dark"
-        );
+        root.removeAttribute("data-theme");
     }
 
-    updateThemeIcon();
+    localStorage.setItem("gkdu-theme",theme);
+
+    updateThemeButton();
 }
 
 
-if(
-    localStorage.getItem("gkdu-theme")
-    === "dark"
-){
+/* Load saved theme */
 
-    document.documentElement
-        .setAttribute(
-            "data-theme",
-            "dark"
-        );
+const savedTheme =
+    localStorage.getItem("gkdu-theme");
+
+if(savedTheme){
+    setTheme(savedTheme);
+}else{
+
+    /*
+       Follow device preference only on first visit.
+    */
+
+    const prefersDark =
+        window.matchMedia &&
+        window.matchMedia(
+            "(prefers-color-scheme: dark)"
+        ).matches;
+
+    if(prefersDark){
+        setTheme("dark");
+    }else{
+        setTheme("light");
+    }
+
 }
 
-updateThemeIcon();
 
+/* Toggle */
+
+themeButton.addEventListener("click",function(){
+
+    const isDark =
+        root.getAttribute("data-theme") === "dark";
+
+    setTheme(isDark ? "light" : "dark");
+
+});
 
 
 /* =========================================================
    FAQ SEARCH
 ========================================================= */
 
-function filterFAQs(){
+const faqSearch =
+    document.getElementById("faqSearch");
+
+const faqItems =
+    document.querySelectorAll(".faq-item");
+
+faqSearch.addEventListener("input",function(){
 
     const query =
-        document
-        .getElementById("faqSearch")
-        .value
-        .toLowerCase()
-        .trim();
+        this.value.trim().toLowerCase();
 
-    const items =
-        document
-        .querySelectorAll(".faq");
-
-    let visible = 0;
-
-    items.forEach(item => {
+    faqItems.forEach(function(item){
 
         const text =
-            item.innerText
-            .toLowerCase();
+            item.textContent.toLowerCase();
 
-        if(
-            text.includes(query)
-        ){
+        const match =
+            text.includes(query);
 
-            item.style.display = "";
-
-            visible++;
-
-        }else{
-
-            item.style.display =
-                "none";
-        }
+        item.style.display =
+            match ? "" : "none";
 
     });
 
+});
 
-    const count =
-        document.getElementById(
-            "faqCount"
-        );
 
-    if(query === ""){
+/* =========================================================
+   SHARE
+========================================================= */
 
-        count.textContent =
-            "Showing all FAQs";
+const shareButton =
+    document.getElementById("shareButton");
+
+shareButton.addEventListener("click",async function(){
+
+    const shareData = {
+
+        title:"GKDU Fresher's Guide",
+
+        text:
+        "Check out the GKDU Fresher's Guide — syllabus, PYQs, student resources and campus information.",
+
+        url:window.location.href
+
+    };
+
+
+    if(navigator.share){
+
+        try{
+
+            await navigator.share(shareData);
+
+        }catch(error){
+
+            /*
+               User cancelled sharing.
+               Nothing needs to happen.
+            */
+
+        }
 
     }else{
 
-        count.textContent =
-            `${visible} FAQ${visible !== 1 ? "s" : ""} found`;
-    }
-}
+        try{
 
-
-
-/* =========================================================
-   FAQ KEYBOARD SHORTCUT
-========================================================= */
-
-document.addEventListener(
-    "keydown",
-    event => {
-
-        if(
-            event.key === "/" &&
-            document.activeElement.tagName !== "INPUT"
-        ){
-
-            event.preventDefault();
-
-            document
-                .getElementById(
-                    "faqSearch"
-                )
-                .focus();
-        }
-
-    }
-);
-
-
-
-/* =========================================================
-   SCROLL PROGRESS
-========================================================= */
-
-window.addEventListener(
-    "scroll",
-    () => {
-
-        const scrollTop =
-            window.scrollY;
-
-        const height =
-            document.documentElement
-            .scrollHeight
-            -
-            window.innerHeight;
-
-        const percentage =
-            height > 0
-            ? (scrollTop / height) * 100
-            : 0;
-
-        document
-            .getElementById("progress")
-            .style.width =
-            percentage + "%";
-
-
-        const top =
-            document.getElementById(
-                "topBtn"
+            await navigator.clipboard.writeText(
+                window.location.href
             );
 
-        if(scrollTop > 450){
+            const oldText =
+                shareButton.textContent;
 
-            top.classList.add("show");
+            shareButton.textContent =
+                "✓ Link Copied";
 
-        }else{
+            setTimeout(function(){
 
-            top.classList.remove("show");
+                shareButton.textContent =
+                    oldText;
+
+            },1800);
+
+        }catch(error){
+
+            alert(
+                "Copy this page URL from your browser to share the guide."
+            );
+
         }
 
     }
-);
 
-
-
-/* =========================================================
-   BACK TO TOP
-========================================================= */
-
-function scrollToTop(){
-
-    window.scrollTo({
-
-        top:0,
-
-        behavior:"smooth"
-
-    });
-
-}
-
+});
 
 
 /* =========================================================
    SCROLL REVEAL
 ========================================================= */
 
+const revealElements =
+    document.querySelectorAll(".reveal");
+
 const observer =
     new IntersectionObserver(
-        entries => {
 
-            entries.forEach(
-                entry => {
+        function(entries,observer){
 
-                    if(
-                        entry.isIntersecting
-                    ){
+            entries.forEach(function(entry){
 
+                if(entry.isIntersecting){
+
+                    entry.target.classList.add("show");
+
+                    observer.unobserve(
                         entry.target
-                            .classList
-                            .add("show");
-
-                        observer
-                            .unobserve(
-                                entry.target
-                            );
-                    }
+                    );
 
                 }
-            );
+
+            });
 
         },
+
         {
-            threshold:.08
+            threshold:.12,
+            rootMargin:"0px 0px -40px 0px"
         }
+
     );
 
 
-document
-    .querySelectorAll(".reveal")
-    .forEach(element => {
+revealElements.forEach(function(element){
 
-        observer.observe(element);
+    observer.observe(element);
 
-    });
-
+});
 
 
 /* =========================================================
-   CLOSE FAQ WHEN ANOTHER OPENS
+   TACTILE KEYBOARD / TOUCH FEEDBACK
 ========================================================= */
 
-document
-    .querySelectorAll(".faq")
-    .forEach(current => {
+document.querySelectorAll(
+    ".btn,.resource-card,.hero-button,.review-button"
+).forEach(function(element){
 
-        current.addEventListener(
-            "toggle",
-            () => {
+    element.addEventListener(
+        "keydown",
+        function(event){
 
-                if(!current.open)
-                    return;
+            if(
+                event.key === "Enter" ||
+                event.key === " "
+            ){
 
-                document
-                    .querySelectorAll(".faq")
-                    .forEach(other => {
-
-                        if(
-                            other !== current &&
-                            other.open
-                        ){
-
-                            other.open =
-                                false;
-                        }
-
-                    });
+                element.style.transform =
+                    "scale(.97)";
 
             }
-        );
 
-    });
+        }
+    );
+
+    element.addEventListener(
+        "keyup",
+        function(){
+
+            element.style.transform = "";
+
+        }
+    );
+
+});
 
 </script>
 
 </body>
-    </html>
+</html>
